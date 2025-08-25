@@ -1,0 +1,17 @@
+$family-first:  "Nunito", sans-serif; 
+$family-second: "Nunito", sans-serif;
+$family-monospace: 'Fira Mono', 'Courier New', monospace;
+
+
+$size-xs: clamp(0.8rem, 0.08vi + 0.78rem, 0.84rem);
+$size-md: clamp(1rem, 0.23vi + 0.94rem, 1.13rem);
+$size-lg: clamp(1.25rem, 0.45vi + 1.14rem, 1.5rem);
+$size-xl: clamp(1.56rem, 0.79vi + 1.36rem, 2rem);
+$size-xxl: clamp(1.95rem, 1.29vi + 1.63rem, 2.66rem);
+$size-xxxl: clamp(2.44rem, 2.02vi + 1.94rem, 3.55rem);
+
+
+$weight-normal: 400;
+$weight-bold: 700;
+$weight-light: 300;
+

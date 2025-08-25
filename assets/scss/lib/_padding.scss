@@ -1,0 +1,8 @@
+//Padding
+@for $i from 1 through 20 {
+  $value: $i * 5px;
+
+  .pt-#{$value} {
+    margin: $value;
+  }
+}

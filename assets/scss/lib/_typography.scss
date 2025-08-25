@@ -1,0 +1,139 @@
+@use "variables/_global" as global;
+
+//headings variables
+$h1-color: global.$color-primary;
+$h2-color: global.$color-primary;
+$h3-color: global.$color-primary;
+$h4-color: global.$color-primary;
+$h5-color: global.$color-primary;
+$h6-color: global.$color-primary;
+
+//Paragraphs variables
+$color-paragraph: global.$color-grey-900;
+$color-link: global.$color-yellow;
+
+//Horizontal Rule variables
+$hr-color: #ddd;
+
+//Global font-family
+body{
+  font-family: global.$family-first;
+  color: global.$color-primary;
+}
+
+//headings
+h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+  color: $h1-color;
+}
+
+//headings responsive font sizes
+h1, .h1 {
+    font-size: calc(1.375rem + 1.5vw);
+}
+@media (min-width: 1200px) {
+  h1, .h1 {
+    font-size: 2.5rem;
+  }
+}
+
+h2, .h2 {
+    font-size: calc(1.325rem + 0.9vw);
+    color: $h2-color;
+}
+@media (min-width: 1200px) {
+  h2, .h2 {
+    font-size: 2rem;
+  }
+}
+
+h3, .h3 {
+    color: $h3-color;
+    font-size: calc(1.3rem + 0.6vw);
+}
+@media (min-width: 1200px) {
+  h3, .h3 {
+    font-size: 1.75rem;
+  }
+}
+
+h4, .h4 {
+    color: $h4-color;
+    font-size: calc(1.275rem + 0.3vw);
+}
+@media (min-width: 1200px) {
+  h4, .h4 {
+    font-size: 1.5rem;
+  }
+}
+
+h5, .h5 {
+    color: $h5-color;
+    font-size: 1.25rem;
+}
+
+h6, .h6 {
+  font-size: 1rem;
+}
+
+//paragraphs
+p {
+  font-family: global.$family-second;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color:$color-paragraph;
+}
+
+a{
+  color: $color-link;
+  text-decoration: underline;
+  color: scale($color-link, $h2-color);
+  
+  &:hover {
+    color: scale($color-link, 10%);
+  }
+}
+
+//Horizontal Rule
+hr{
+    margin: 1rem 0;
+    border: 0;
+    border-top: 1px solid $hr-color;
+}
+
+//Quotation
+blockquote{
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+p,address{
+  margin-bottom: 1rem;
+  font-style: normal;
+  line-height: inherit;
+}
+
+cite {
+    font-style: italic;
+}
+
+//Lists
+ol, ul{
+  margin-top: 0;
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+}
+
+li{
+  margin-bottom: 0.25rem;
+  margin-left: 5px;
+}
+
+//Custom classes
+.text-center { text-align: center}
+.text-right { text-align: right; }
+.text-left { text-align: left; }
+.text-justify { text-align: justify; }

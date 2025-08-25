@@ -1,0 +1,94 @@
+@use "../variables/_global" as global;
+@use 'sass:color';
+
+
+/* logo dark*/
+.logo {
+    text-decoration: none;
+    width: fit-content;
+    height: 80px;
+    display: flex;
+
+    .logo-wrap{
+        vertical-align: unset;
+        margin-right: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:last-child{
+            margin-right: 0;
+        }
+    }
+        
+    &:hover {
+        .logo-ctrl {
+            background: color.adjust(global.$color-primary, $lightness: -20%);
+        }
+
+        .logo-build {
+            color: color.adjust(global.$color-primary, $lightness: -20%);
+        }
+    }
+
+    .logo-ctrl {
+        width: 75px;
+        height: 36px;
+        background-color: global.$color-primary;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        border-bottom-left-radius: 5px;
+        color: #fff;
+        font-size: 17px;
+        padding: 3px 5px;
+        font-weight: bold;
+    }
+
+    .logo-build {
+        color: global.$color-primary;
+        font-size: 30px;
+        font-weight: bold;
+        letter-spacing: -1px;
+    }
+}
+
+/* Logo Light*/
+.logo.logo-light{
+    height:37px;
+
+    &:hover {
+        .logo-ctrl {
+            background: color.adjust(global.$color-white, $lightness: -20%);
+        }
+
+        .logo-build {
+            color: color.adjust(global.$color-white, $lightness: -20%);
+        }
+    }
+
+    .logo-ctrl {
+        background-color: global.$color-white;
+        color: global.$color-dark;
+    }
+
+    .logo-build {
+        color: global.$color-white;
+    }
+}
+
+
+/* Mobile Size */
+@media (max-width: 768px) {
+
+    .logo-ctrl {
+        width: 55px;
+        height: 34.5px;
+        font-size: 15px;
+    }
+
+    .logo-build {
+        font-size: 23px;
+    }
+
+}

@@ -1,0 +1,19 @@
+@use "../variables/_global" as global;
+
+.header-top{
+    background-color: global.$color-primary;
+    padding: 5px 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    *{
+        color: global.$color-white;
+        font-size: 1rem;
+        margin: 0;
+        padding: 0;
+
+    }  
+
+}

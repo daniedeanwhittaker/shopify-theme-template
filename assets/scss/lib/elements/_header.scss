@@ -1,0 +1,340 @@
+@use "../variables/_global" as global;
+@use "../variables/_layout" as layout;
+@use 'sass:color';
+
+$heading-height: 80px;
+
+// header
+header.header-main {
+    width: 100%;
+    padding: 0 60px;
+    height: $heading-height;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+
+    &.active{
+        height: 100%;
+    }
+
+    /* Main navigation */
+    nav{
+        background-color: transparent;
+    }
+
+    ul{
+        height: 100%;
+        list-style: none;
+        display: flex;
+        align-self: center;
+        background-color: transparent;
+        overflow: visible;
+        margin: 0;
+        padding: 0;
+
+        li{
+            float: left;
+            margin: 0;
+            position: relative;
+
+            a{
+                background-color: #fff;
+                color: #000;
+                cursor: pointer;
+                display: block;
+                font-size: 1rem;
+                height: 100%;
+                text-decoration: none;
+                line-height: $heading-height;
+                padding: 0 15px;
+                white-space: nowrap;
+                transition: all ease-in-out 100ms;
+        
+                &:hover{
+                    background-color: global.$color-primary;
+                    color:#fff;
+                }
+            
+            }
+
+
+            ul{
+                background: white;
+                display: none;
+                height: auto;
+                left: 0;
+                margin: 0;
+                opacity: 0;
+                padding: 0;
+                position: absolute;
+                top: 100%;
+                transition: all ease-in-out 100ms;
+                visibility: hidden;
+                z-index: 900;
+
+                // Submenu items
+                li {
+                    float: left;
+                    margin: 0;
+                    position: relative;
+                    width: 100%;
+                    
+                    // Submenu links 
+                    a{ 
+                        white-space: nowrap;
+                        display: block;
+                        line-height: 35px;
+                        width: 100%;
+                        text-align: left;
+                    }
+                }
+            }
+
+            //Social links
+            &.social-links{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+
+                a{
+                    padding: 0 8px;
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+
+    /*-- Mobile menu icon --*/
+    .mobile-menu-icon{
+        align-self: center;
+        color: global.$color-primary;
+        cursor: pointer;
+        display: none; // Hide on larger screens
+        font-size: 1.5rem;
+        height: $heading-height;
+        line-height: $heading-height;
+        padding: 0 20px;
+        position: absolute;
+        right: 0;
+        text-decoration: none;
+        top: 0;
+
+        &::before{
+            font-family: "Font Awesome 7 Free";
+            font-weight: 900;
+            content: "\f0c9"; // Hamburger icon
+        }
+
+        &.active{
+            &::before {
+                content: "\f00d"; // Close icon
+            }
+        }
+    }
+
+    /* Search form */
+    .search-form {
+        align-items: center;
+        display: flex;
+        gap: 0.5rem;
+        height: 80px;
+        margin-right: 0;
+
+        label {
+            display: none; // Hide label for search input
+        }
+
+        input {
+            flex: 1;
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+            margin-left: 20px;
+
+            &:focus-visible{
+                outline: 2px solid global.$color-primary;
+                outline-offset: 2px;
+            }
+        }
+
+        button {
+            background: global.$color-primary;
+            color: #fff;
+            border: none;
+            padding: 0.5rem 0.75rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+
+            i {
+                pointer-events: none;
+            }
+
+            &:hover {
+                background: color.adjust(global.$color-primary, $lightness: -20%);
+            }
+        }
+    }
+}
+
+// Media Queries
+@media (min-width: layout.$container-md) and (max-width: layout.$container-xl) {
+    header.header-main ul li.social-links { 
+        display: none !important;
+    }
+}
+
+/* Desktop */
+@media (min-width: 768px) {
+    //Apply hover only to desktop
+    header.header-main {
+        ul{
+            margin-left: 10px;
+            margin-right: 10px;
+
+            li { 
+                &:hover > ul{ 
+                    visibility: visible;
+                    opacity: 1;
+                    display: block;
+                
+                }
+            }
+        }
+    }
+}
+
+/* Mobile Size */
+@media (max-width: 768px) {
+    header.header-main {
+        padding: 0;
+        position: fixed;
+
+        // Mobile logo
+        .logo{
+            margin: 0 10px 0 20px;
+
+            .logo-wrap{
+                margin-right: 7px;
+            }
+        }
+ 
+        // Mobile navigation
+        .navigation-links {
+            display: none; // Default hidden
+            margin: 0;
+            width: 100%;
+            position: absolute;
+            padding: 0;
+            flex-direction: column;
+            
+            //display when activated
+            &.active {
+                display: flex;
+                background: #fff;
+                border-top: 1px solid #ddd;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                height: 100%;
+                left: 0;
+                overflow: auto;
+                padding-bottom: $heading-height + 20px; // Add padding for footer
+                position: absolute;
+                top: $heading-height;
+                width: 100%;
+                z-index: 999;
+            }
+                
+            li{
+                float: none;
+                margin: 0;
+                position: relative;
+                height: auto;
+
+                a{
+                    line-height: 50px;
+                    height: 50px;
+                }
+
+                // Mobile
+                &:has(> ul) {
+                    ul{
+                        //Active Mobile Submenu
+                        &.active{ 
+                            display: block;
+                            width: 100%;
+                            flex-direction: column;
+                            visibility: visible;
+                            opacity: 1;
+                            position: relative;
+                            top: 0;
+                        }
+
+                        li {
+                            a{
+                                line-height: 50px;
+                                height: 50px;
+                                color: global.$color-white;
+                                background-color: global.$color-primary;
+                            }
+                        }
+                            
+                 
+                    }
+
+                    //submenu toggle button
+                    .sub-toggle {
+                        color: global.$color-primary;
+                        display: block;
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                        height: 50px;
+                        width: 50px;
+                        text-align: center;
+                        line-height: 49px;
+                        margin: 0;
+                        z-index: 1;
+
+                        &::before{
+                            font-family: "Font Awesome 7 Free";
+                            font-weight: 900;
+                            content: "\2b";
+                            
+                        }
+                        
+                        &.active{
+                            &::before {
+                                content: "\f068"; 
+                            }
+                        }
+                    }
+               
+                }
+            }
+        }
+
+        // show mobile menu toggle button
+        .mobile-menu-icon {
+            display: block;
+        }
+
+        .search-form{
+            margin-right: 60px;
+        }
+    }
+}
+
+/* XS Mobile Size */
+@media (max-width: 350px) {
+    .search-form {
+        display: none;
+    }
+}

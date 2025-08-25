@@ -1,0 +1,52 @@
+@use "variables/_global" as global;
+
+table{
+    caption-side: bottom;
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 1rem;
+    vertical-align: top;
+    border-color: global.$color-grey-400;
+
+    tbody, td, tfoot, th, thead, tr {
+        border-color: inherit;
+        border-style: solid;
+    }
+
+    &  > thead {
+        vertical-align: bottom;
+    }
+    & > :not(caption) > * {
+        border-width:1px 0;
+
+        & > * {
+            border-width: 0 1px;
+            padding: .5rem .5rem;
+            background-color: #fff;
+        }        
+    }
+
+    tbody{
+        vertical-align: inherit;
+    }
+    tr {
+        display: table-row;
+        vertical-align: inherit;
+        unicode-bidi: isolate;
+    }
+    th{
+        text-align: -webkit-match-parent;
+    }
+    td {
+        display: table-cell;
+        vertical-align: inherit;
+        unicode-bidi: isolate;
+    }
+
+    caption {
+        padding-top: .5rem;
+        padding-bottom: .5rem;
+        color: global.$color-grey-700;
+        text-align: left;
+    }
+}

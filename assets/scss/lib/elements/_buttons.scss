@@ -1,0 +1,89 @@
+// _buttons.scss
+@use "../variables/_global" as global;
+@use 'sass:color';
+
+// Variables
+$btn-font-size: 1rem;
+$btn-padding-y: 0.5em;
+$btn-padding-x: 1em;
+$btn-border-radius: 4px;
+$btn-transition: all 0.2s ease-in-out;
+
+$btn-colors: (
+  primary: global.$color-primary,
+  secondary: global.$color-secondary,
+  success: global.$color-success,
+  danger: global.$color-danger,
+  warning: global.$color-warning, 
+  light: global.$color-light, 
+  dark: global.$color-dark, 
+);
+
+// Base Button
+.btn {
+  display: inline-block;
+  font-size: $btn-font-size;
+  padding: $btn-padding-y $btn-padding-x;
+  border: none;
+  border-radius: $btn-border-radius;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: $btn-transition;
+  line-height: 1.5;
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+// Variants
+@each $name, $color in $btn-colors {
+  .btn-#{$name} {
+    background-color: $color;
+    color: if(color.channel($color, "lightness", $space: hsl) > 50%, #000, #fff);
+    
+
+
+    &:hover:not(:disabled) {
+      background: color.adjust(global.$color-primary, $lightness: -20%);
+    }
+
+    &:focus {
+      outline: 2px solid if(color.channel($color, "lightness", $space: hsl) > 50%, #000, #fff);
+      outline-offset: 2px;
+    }
+  }
+}
+
+// Outline Variants
+@each $name, $color in $btn-colors {
+  .btn-outline-#{$name} {
+    background-color: transparent;
+    border: 2px solid $color;
+    color: $color;
+
+    &:hover:not(:disabled) {
+      background-color: $color;
+
+      color: if(color.channel($color, "lightness", $space: hsl) > 50%, #000, #fff);
+    }
+
+    &:focus {
+      outline: 2px solid color.adjust(global.$color-primary, $lightness: -20%);
+      outline-offset: 2px;
+    }
+  }
+}
+
+// Sizes
+.btn-sm {
+  font-size: 0.875rem;
+  padding: 0.25em 0.5em;
+}
+
+.btn-lg {
+  font-size: 1.25rem;
+  padding: 0.75em 1.5em;
+}

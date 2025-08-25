@@ -1,0 +1,70 @@
+// - Console commands 
+// sass --watch themes/ctrl-build/assets/scss/styles.scss:themes/ctrl-build/assets/css/styles.css
+// - sass themes/ctrl-build/assets/scss/styles.scss themes/ctrl-build/assets/css/styles.css
+
+//Variables
+@use "lib/variables/_global" as global;
+@use "lib/_typography";
+@use "lib/_table";
+@use "lib/_layout";
+@use "lib/_positioning";
+@use "lib/_spacing";
+@use "lib/_nav";
+@use "lib/_columns";
+@use "lib/_containers";
+@use "lib/_flex";
+@use "lib/_borders" as borders;
+
+@use "lib/elements/_buttons";
+//Header-top
+@use "lib/elements/_header-top";
+//Header
+@use "lib/elements/_header";
+@use "lib/elements/_logo";
+@use "lib/elements/_footer";
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+body{
+    background-color: global.$color-main-background;
+    padding: 0;
+    margin: 0;
+    font-size: global.$size-md;
+}
+
+// section banner
+
+.section-banner {
+    background-color: #043a43;
+    background-image: url(../img/banners/main-banner.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 40px;
+
+  .banner-content {
+    max-width: 800px;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin: 0 auto 0 0;
+    padding: 50px;
+    @include borders.radius(10px); // Default: 4px
+  }
+
+  .banner-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: global.$color-white;
+  }
+
+  .banner-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    color: global.$color-white;
+  }
+}
+

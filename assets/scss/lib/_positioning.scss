@@ -1,0 +1,80 @@
+/* Float */
+.f-left{
+    float: left;
+}
+.f-right{
+    float: right;
+}
+.f-none{
+    float: none;
+}
+
+.d-none {
+    display: none;
+}
+.d-block {
+    display: block;
+}
+.d-inline {
+    display: inline;
+}
+.d-inline-block {
+    display: inline-block;
+}
+.d-flex {
+    display: flex;
+}
+.d-inline-flex {
+    display: inline-flex;
+}
+
+/* Clearfix */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+} 
+   
+/* Z-Index */
+@for $i from 0 through 10 {
+  .z-#{$i} {
+    z-index: $i;
+  }
+}
+
+
+
+/* Top, Right, Bottom, Left */
+@for $i from 0 through 10 {
+  .t-#{$i * 10} {
+    top: #{$i * 10}px;
+  }
+}
+
+/* Positioning */
+.p-relative {
+    position: relative;
+}
+.p-absolute {
+    position: absolute;
+}
+.p-fixed {
+    position: fixed;
+}
+.p-sticky{
+    position: sticky;
+}  
+.p-static {
+    position: static;
+}
+.p-inherit {
+    position: inherit;
+}
+.p-initial {
+    position: initial;
+}
+.p-unset {
+    position: unset;
+}   
+
+

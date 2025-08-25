@@ -1,0 +1,37 @@
+// _container.scss
+@use "variables/_layout" as layout;
+@use 'sass:map';
+
+
+$breakpoints: (
+  xs: layout.$container-xs,
+  sm: layout.$container-sm,
+  md: layout.$container-md,
+  lg: layout.$container-lg,
+  xl: layout.$container-xl,
+  xxl: layout.$container-xxl
+);
+
+$container-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px
+);
+
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  @each $breakpoint, $min-width in $breakpoints {
+    @if map.has-key($container-widths, $breakpoint) {
+      @media (min-width: $min-width) {
+        max-width: map.get($container-widths, $breakpoint);
+      }
+    }
+  }
+}

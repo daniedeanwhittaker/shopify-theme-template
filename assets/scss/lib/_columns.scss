@@ -1,0 +1,41 @@
+@use "variables/_grid" as grid;
+
+@for $i from 1 through grid.$grid {
+  .col-#{$i} {
+    flex: 0 0 auto;
+    width: calc(100% / 12) * $i;
+  }
+}
+@for $i from 1 through grid.$grid {
+  .col-#{$i}-offset {
+    margin-left: calc(100% / 12) * $i;
+  }
+}
+@for $i from 1 through grid.$grid {
+  .col-#{$i}-pull {
+    right: calc(100% / 12) * $i;
+  }
+}
+@for $i from 1 through grid.$grid {
+  .col-#{$i}-push {
+    left: calc(100% / 12) * $i;
+  }
+}   
+@for $i from 1 through grid.$grid {
+  .col-#{$i}-order {
+    order: $i;
+  }
+}   
+
+
+//// Responsive columns
+@each $label, $size in grid.$breakpoints {
+  @for $i from 1 through 12 {
+    @media (min-width: #{$size}) {
+      .col-#{$label}-#{$i} {
+        flex: 0 0 auto;
+        width: calc(100% / 12 * #{$i});
+      }
+    }
+  }
+}
