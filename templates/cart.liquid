@@ -1,0 +1,115 @@
+<style>
+.cart-container {
+    max-width: 700px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    padding: 32px;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+.cart-title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+    text-align: center;
+}
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 24px;
+}
+.cart-table th, .cart-table td {
+    padding: 12px 8px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+.cart-table th {
+    background: #f7f7f7;
+    font-weight: 500;
+}
+.cart-product-img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid #eee;
+}
+.cart-total {
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: right;
+    margin-bottom: 24px;
+}
+.checkout-btn {
+    display: block;
+    width: 100%;
+    padding: 16px;
+    background: #0070f3;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+.checkout-btn:hover {
+    background: #005bb5;
+}
+.empty-cart {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #888;
+    margin: 40px 0;
+}
+</style>
+
+<div class="cart-container">
+    <div class="cart-title">Your Shopping Cart</div>
+    {% if cart.item_count > 0 %}
+        <table class="cart-table">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Title</th>
+                    <th>Qty</th>
+                    <th>Price</th>
+                    <th>Line Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in cart.items %}
+                <tr>
+                    <td>
+                        {% if item.image %}
+                            <img src="{{ item.image | img_url: 'medium' }}" alt="{{ item.title }}" class="cart-product-img">
+                        {% else %}
+                            <div class="cart-product-img" style="background:#f0f0f0;display:flex;align-items:center;justify-content:center;">No Image</div>
+                        {% endif %}
+                    </td>
+                    <td>
+                        <!-- Product Title -->
+                        {% if item.variant.title !=  'Default Title'%}
+                            <a href="{{ item.url }}" title="{{ item.variant.title}}">{{ item.variant.title}}</a>
+                        {% endif %}
+                    </td>
+                    <td>{{ item.quantity }}</td>
+                    <td>{{ item.price | money }}</td>
+                    <td>{{ item.line_price | money }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="cart-total">
+            Cart Total: <strong>{{ cart.total_price | money }}</strong>
+        </div>
+        <a href="/checkout" title="Checkout" class="checkout-btn">Proceed to Checkout</a>
+    {% else %}
+        <div class="empty-cart">
+            Your cart is currently empty.
+        </div>
+    {% endif %}
+</div>

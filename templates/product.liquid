@@ -1,0 +1,127 @@
+<!-- Product Page Layout -->
+<div class="product-page">
+    <div class="product-image">
+        <!-- Main Product Image -->
+        {% if product.featured_image %}
+        <div class="product-main-image">
+            <img src="{{ product.featured_image | image_url: width: 800 }}" alt="{{ product.title }}" />
+        </div>
+        {% endif %}
+
+        <!-- Thumbnail Images -->
+        {% if product.images.size > 1 %}
+        <div class="product-thumbnails">
+            {% for image in product.images %}
+            <img src="{{ image | image_url: width: 120 }}" alt="{{ image.alt | escape }}" class="thumbnail" />
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+    <div class="product-details">
+        <h1 class="product-title">{{ product.title }}</h1>
+        <p class="product-price">{{ product.price | money }}</p>
+
+        {% if product.compare_at_price > product.price %}
+        {% assign discount = product.compare_at_price | minus: product.price %}
+        <p>You save {{ discount | money }}</p>
+        {% endif %}
+        
+        <!-- BEGIN PRODUCT FORM-->
+        {% form 'product', product %}
+            <!-- Variant Selector -->
+            {% if product.variants.size > 1 %}
+                <label for="product-select">Choose an option:</label>
+                <select name="id" id="product-select">
+                {% for variant in product.variants %}
+                    <option value="{{ variant.id }}" {% if variant == product.selected_or_first_available_variant %}selected{% endif %}>
+                    {{ variant.title }} - {{ variant.price | money }}
+                    </option>
+                {% endfor %}
+                </select>
+            {% else %}
+                <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+            {% endif %}
+
+            <!-- Quantity Selector -->
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" value="1" min="1">
+
+            <!-- Add to Cart Button -->
+            <button type="submit" class="btn btn--add-to-cart">
+                Add to Cart
+            </button>
+            {% endform %}
+        <!-- END PRODUCT FORM-->
+
+
+        <p class="product-description">
+            {{ product.description }}
+        </p>
+    </div>
+</div>
+
+<style>
+.product-page {
+    display: flex;
+    max-width: 900px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+.product-image {
+    flex: 1;
+    background: #f7f7f7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+.product-image img {
+    max-width: 100%;
+    border-radius: 6px;
+}
+.product-details {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.product-title {
+    font-size: 2rem;
+    margin-bottom: 16px;
+}
+.product-price {
+    font-size: 1.5rem;
+    color: #2a9d8f;
+    margin-bottom: 24px;
+}
+.add-to-cart {
+    background: #2a9d8f;
+    color: #fff;
+    border: none;
+    padding: 14px 32px;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 24px;
+    transition: background 0.2s;
+}
+.add-to-cart:hover {
+    background: #21867a;
+}
+.product-description {
+    color: #555;
+    font-size: 1rem;
+}
+@media (max-width: 700px) {
+    .product-page {
+        flex-direction: column;
+    }
+    .product-image, .product-details {
+        padding: 24px;
+    }
+}
+</style>

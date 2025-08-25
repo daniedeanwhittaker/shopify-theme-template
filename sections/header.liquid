@@ -1,0 +1,143 @@
+{% comment %}
+  Main Header Section
+{% endcomment %}
+<style>
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 32px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.logo {
+    height: 40px;
+}
+.nav {
+    display: flex;
+    gap: 24px;
+}
+.nav-item {
+    position: relative;
+}
+.nav-link {
+    text-decoration: none;
+    color: #222;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+.nav-link:hover {
+    background: #f2f2f2;
+}
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    min-width: 180px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    z-index: 10;
+    flex-direction: column;
+}
+.nav-item:hover .dropdown {
+    display: flex;
+}
+.dropdown-link {
+    padding: 10px 16px;
+    text-decoration: none;
+    color: #222;
+    border-bottom: 1px solid #eee;
+    transition: background 0.2s;
+}
+.dropdown-link:hover {
+    background: #f9f9f9;
+}
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+@media (max-width: 1024px) {
+    .header {
+        padding: 12px 20px;
+    }
+    .nav {
+        gap: 16px;
+    }
+}
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 12px;
+    }
+    .nav {
+        flex-direction: column;
+        gap: 0;
+        width: 100%;
+        display: none;
+    }
+    .nav.open {
+        display: flex;
+    }
+    .nav-item {
+        width: 100%;
+    }
+    .nav-link {
+        width: 100%;
+        padding: 12px;
+    }
+    .dropdown {
+        position: static;
+        box-shadow: none;
+        min-width: 0;
+    }
+    .menu-toggle {
+        display: block;
+        margin-left: auto;
+    }
+}
+@media (max-width: 480px) {
+    .logo {
+        height: 32px;
+    }
+    .header {
+        padding: 8px 6px;
+    }
+}
+</style>
+
+<header class="header">
+    <a href="{{ shop.url }}">
+        <img src="{{ shop.logo | img_url: '200x' }}" alt="{{ shop.name }}" class="logo">
+    </a>
+    <button class="menu-toggle" onclick="document.querySelector('.nav').classList.toggle('open')">&#9776;</button>
+    <nav class="nav">
+        {% for link in linklists.main-menu.links %}
+            <div class="nav-item">
+                <a href="{{ link.url }}" class="nav-link">{{ link.title }}</a>
+                {% if link.links.size > 0 %}
+                    <div class="dropdown">
+                        {% for sublink in link.links %}
+                            <div class="nav-item">
+                                <a href="{{ sublink.url }}" class="dropdown-link">{{ sublink.title }}</a>
+                                {% if sublink.links.size > 0 %}
+                                    <div class="dropdown">
+                                        {% for subsublink in sublink.links %}
+                                            <a href="{{ subsublink.url }}" class="dropdown-link">{{ subsublink.title }}</a>
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </nav>
+</header>
