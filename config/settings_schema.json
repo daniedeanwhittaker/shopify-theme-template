@@ -1,0 +1,11 @@
+[
+    {
+        "name": "them_info",
+        "theme_name": "Shopify Theme Template",
+        "theme_author": "Daniel Dean Whittaker",
+        "theme_version": "1.0.0",
+        "theme_description": "My default starting theme",
+        "theme_documentation_url": "https://github.com/daniedeanwhittaker/shopify-theme-template/edit/main/README.md",
+        "theme_support_url": "https://github.com/daniedeanwhittaker/shopify-theme-template/issues"
+    }
+]
