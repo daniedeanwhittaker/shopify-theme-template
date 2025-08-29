@@ -1,207 +1,82 @@
-{% comment %}
-    Shopify Header Section with:
-    - Dynamic logo
-    - Navigation for categories
-    - Account dropdown
-    - Cart button
-    - Responsive CSS
-{% endcomment %}
+<!-- Header -->
+<header class="header-main">
+  <nav class="d-flex justify-content-between col-12" role="navigation">
+    <!-- logo -->
+    <a href="{{ routes.root_url }}" class="logo" title="{{ shop.name }}">
+      {% if shop.brand.logo %}
+        <img src="{{ shop.brand.logo | img_url: '200x' }}" alt="{{ shop.name }}">
+      {% else %}
+        <span class="shop-name">{{ shop.name }}</span>
+      {% endif %}
+    </a>
 
-<header class="shop-header">
-    <div class="header-container">
-        <div class="logo">
-            <a href="{{ routes.root_url }}" title="{{ shop.name }}">
-                {% if shop.brand.logo %}
-                    <img src="{{ shop.brand.logo | img_url: '200x' }}" alt="{{ shop.name }}">
-                {% else %}
-                    <span class="shop-name">{{ shop.name }}</span>
-                {% endif %}
-            </a>
-        </div>
-        <nav class="main-nav">
-            <ul>
-                {% for link in linklists.main-menu.links %}
-                    <li class="{% if link.links.size > 0 %}has-dropdown{% endif %}">
-                        <a href="{{ link.url }}">{{ link.title }}</a>
-                        {% if link.links.size > 0 %}
-                            <ul class="dropdown-menu">
-                                {% for sublink in link.links %}
-                                    <li><a href="{{ sublink.url }}">{{ sublink.title }}</a></li>
-                                {% endfor %}
-                            </ul>
-                        {% endif %}
-                    </li>
-                {% endfor %}
+    <!-- navigation -->
+    <ul class="navigation-links">
+      {% for link in linklists['main-menu'].links %}
+        <li class="{% if link.links.size > 0 %}dropdown{% endif %}">
+          <a href="{{ link.url }}">{{ link.title }}</a>
+          {% if link.links.size > 0 %}
+            <ul class="dropdown-menu">
+              {% for sublink in link.links %}
+                <li>
+                  <a href="{{ sublink.url }}">{{ sublink.title }}</a>
+                </li>
+              {% endfor %}
             </ul>
-        </nav>
-        <div class="header-actions">
-            <div class="account-dropdown">
-                <button class="account-btn">
-                    <svg width="24" height="24" fill="none"><circle cx="12" cy="8" r="4" stroke="#333" stroke-width="2"/><path d="M4 20c0-4 8-4 8-4s8 0 8 4" stroke="#333" stroke-width="2"/></svg>
-                </button>
-                <div class="dropdown-content">
-                    {% if customer %}
-                        <a href="/account">My Account</a>
-                        <a href="/account/orders">Orders</a>
-                        <a href="/account/logout">Logout</a>
-                    {% else %}
-                        <a href="/account/login">Login</a>
-                        <a href="/account/register">Register</a>
-                    {% endif %}
-                </div>
-            </div>
-            <a href="/cart" class="cart-btn">
-                <svg width="24" height="24" fill="none"><circle cx="9" cy="21" r="1" stroke="#333" stroke-width="2"/><circle cx="20" cy="21" r="1" stroke="#333" stroke-width="2"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" stroke="#333" stroke-width="2"/></svg>
-                <span class="cart-count">{% if cart.item_count > 0 %}{{ cart.item_count }}{% endif %}</span>
-            </a>
-        </div>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+
+    <!-- Search form -->
+    <form class="search-form" action="/search" method="GET">
+      <label for="search-input" class="visually-hidden">Search</label>
+      <input type="text" id="search-input" name="q" placeholder="Search..." required>
+      <button type="submit">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+    </form>
+
+    <!-- Account Dropdown -->
+    <div class="dropdown account-dropdown">
+      <a href="#" class="account-icon" aria-label="Account">
+        <i class="fa-solid fa-user"></i>
+      </a>
+      <ul class="dropdown-menu">
+        {% if customer %}
+          <li>
+            <a href="/account" title="My Account">My Account</a>
+          </li>
+          <li>
+            <a href="/account/orders" title="Orders">Orders</a>
+          </li>
+          <li>
+            <a href="/account/logout" title="Logout">Logout</a>
+          </li>
+        {% else %}
+          <li>
+            <a href="/account/login" title="Login">Login</a>
+          </li>
+          <li>
+            <a href="/account/register" title="Register">Register</a>
+          </li>
+        {% endif %}
+      </ul>
     </div>
+
+    <!-- Basket Dropdown -->
+    <div class="basket-dropdown">
+      <a href="/cart" title="Basket">
+        <i class="fa-solid fa-cart-shopping"></i> <span>My Basket</span>
+        <span class="cart-count">
+          {%- if cart.item_count > 0 %}{{ cart.item_count }}{% endif -%}
+        </span>
+      </a>
+    </div>
+
+    <!-- Mobile menu icon -->
+    <a href="#" class="mobile-menu-icon" aria-label="Toggle navigation">
+      <span>&amp;</span>
+    </a>
+  </nav>
 </header>
-
-<style>
-.shop-header {
-    background: #fff;
-    border-bottom: 1px solid #eee;
-    width: 100%;
-    position: relative;
-    z-index: 10;
-}
-.header-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0.75rem 1.5rem;
-}
-.logo img {
-    height: 40px;
-    width: auto;
-    display: block;
-}
-.shop-name {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #333;
-    text-decoration: none;
-}
-.main-nav ul {
-    display: flex;
-    gap: 1.5rem;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-.main-nav a {
-    color: #333;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.2s;
-}
-.main-nav a:hover {
-    color: #0070f3;
-}
-.header-actions {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-.account-dropdown {
-    position: relative;
-}
-.account-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0.25rem;
-    display: flex;
-    align-items: center;
-}
-.dropdown-content {
-    display: none;
-    position: absolute;
-    right: 0;
-    top: 110%;
-    background: #fff;
-    border: 1px solid #eee;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-    min-width: 140px;
-    z-index: 20;
-    flex-direction: column;
-}
-.account-dropdown:hover .dropdown-content,
-.account-dropdown:focus-within .dropdown-content {
-    display: flex;
-}
-.dropdown-content a {
-    padding: 0.75rem 1rem;
-    color: #333;
-    text-decoration: none;
-    font-size: 1rem;
-    border-bottom: 1px solid #f5f5f5;
-    transition: background 0.2s;
-}
-.dropdown-content a:last-child {
-    border-bottom: none;
-}
-.dropdown-content a:hover {
-    background: #f5f5f5;
-}
-.cart-btn {
-    position: relative;
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: #333;
-}
-.cart-count {
-    position: absolute;
-    top: -6px;
-    right: -10px;
-    background: #0070f3;
-    color: #fff;
-    font-size: 0.75rem;
-    font-weight: bold;
-    border-radius: 50%;
-    padding: 2px 6px;
-    min-width: 18px;
-    text-align: center;
-}
-
-/* Tablet */
-@media (max-width: 900px) {
-    .header-container {
-        flex-direction: column;
-        align-items: stretch;
-        padding: 0.75rem 1rem;
-    }
-    .main-nav ul {
-        gap: 1rem;
-        justify-content: center;
-    }
-    .logo img {
-        height: 32px;
-    }
-}
-
-/* Mobile */
-@media (max-width: 600px) {
-    .header-container {
-        flex-direction: column;
-        align-items: stretch;
-        padding: 0.5rem 0.5rem;
-    }
-    .logo img {
-        height: 28px;
-    }
-    .main-nav ul {
-        flex-direction: column;
-        gap: 0.5rem;
-        align-items: flex-start;
-    }
-    .header-actions {
-        justify-content: flex-end;
-        gap: 0.5rem;
-    }
-}
-</style>

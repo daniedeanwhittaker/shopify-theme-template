@@ -1,6 +1,6 @@
-// _footer.scss
-@use "../variables/_global" as global;
-@use "../variables/_layout" as layout;
+// _foeeoter.scss
+@use "../lib/variables/_global" as global;
+@use "../lib/variables/_layout" as layout;
 @use 'sass:color';
 
 .footer {
@@ -8,7 +8,7 @@
     padding: 60px;
     height: auto;
 
-    *{
+    * {
         color: global.$color-white;
     }
 
@@ -22,24 +22,21 @@
     }
 
     /*-- footer copyright--*/
-    .footer-bottom{
-        
-    }
+    .footer-bottom {}
 
     /*- footer logo --*/
-    .logo{
-        height:37px;
+    .logo {
+        height: 37px;
     }
 
 
     a {
         text-decoration: none;
 
-        &:hover {
-        }
+        &:hover {}
     }
 
-    .nav-title{
+    .nav-title {
         font-size: 20px;
         font-weight: bold;
         padding: 10px;
@@ -52,13 +49,13 @@
         flex: 1 1 300px;
 
         ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
+            list-style: none;
+            padding: 0;
+            margin: 0;
 
-        li {
-            margin-bottom: 0.5rem;
-        }
+            li {
+                margin-bottom: 0.5rem;
+            }
         }
     }
 
@@ -68,7 +65,7 @@
         flex-direction: column;
         align-items: flex-end;
 
-        ul{
+        ul {
             display: flex
         }
 
@@ -78,13 +75,13 @@
         }
     }
 
-  .footer-bottom {
-    text-align: center;
-    margin-top: 2rem;
-    border-top: 1px solid global.$color-grey-700;
-    padding-top: 1rem;
-    font-size: 0.75rem;
-  }
+    .footer-bottom {
+        text-align: center;
+        margin-top: 2rem;
+        border-top: 1px solid global.$color-grey-700;
+        padding-top: 1rem;
+        font-size: 0.75rem;
+    }
 }
 
 /* Media Quries */
@@ -96,7 +93,7 @@
         align-items: center;
         gap: 20px;
 
-        .nav-title{
+        .nav-title {
             font-size: 20px;
             font-weight: bold;
             padding: 10px;
@@ -104,6 +101,7 @@
             margin-bottom: 10px;
             border-bottom: 1px solid global.$color-grey-700;
         }
+
         .nav {
             flex: 1 1 100px;
             text-align: center

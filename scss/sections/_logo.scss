@@ -1,4 +1,4 @@
-@use "../variables/_global" as global;
+@use "../lib/variables/_global" as global;
 @use 'sass:color';
 
 
@@ -9,18 +9,18 @@
     height: 80px;
     display: flex;
 
-    .logo-wrap{
+    .logo-wrap {
         vertical-align: unset;
         margin-right: 10px;
         display: flex;
         justify-content: center;
         align-items: center;
 
-        &:last-child{
+        &:last-child {
             margin-right: 0;
         }
     }
-        
+
     &:hover {
         .logo-ctrl {
             background: color.adjust(global.$color-primary, $lightness: -20%);
@@ -54,8 +54,8 @@
 }
 
 /* Logo Light*/
-.logo.logo-light{
-    height:37px;
+.logo.logo-light {
+    height: 37px;
 
     &:hover {
         .logo-ctrl {

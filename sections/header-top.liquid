@@ -1,0 +1,17 @@
+<!-- Header top -->
+<div class="header-top">
+  {% if customer %}
+    {% assign tags = customer.tags | join: ',' | downcase | split: ',' %}
+    {% if tags contains 'wholesale' %}
+      <p>Welcome</p>
+    {% elsif tags contains 'retail' %}
+      <p>Welcome</p>
+    {% else %}
+      <p>Welcome back, {{ customer.first_name }}!</p>
+    {% endif %}
+  {% else %}
+    <p>
+      Welcome, guest! Please <a href="/account/login"><i class="fa-solid fa-lock"></i> log in</a>.
+    </p>
+  {% endif %}
+</div>

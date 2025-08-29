@@ -1,0 +1,9 @@
+@use "variables/_global" as global;
+@use 'sass:color';
+
+// _mixins.scss
+@mixin radius($radius: 4px) {
+  border-radius: $radius;
+}
+
+$border: 1px solid global.$color-grey-700;

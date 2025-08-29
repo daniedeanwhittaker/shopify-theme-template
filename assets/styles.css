@@ -2312,23 +2312,18 @@ nav {
 .justify-content-start {
   justify-content: flex-start !important;
 }
-
 .justify-content-end {
   justify-content: flex-end !important;
 }
-
 .justify-content-center {
   justify-content: center !important;
 }
-
-.justify-content-between {
-  justify-content: space-between !important;
-}
-
 .justify-content-around {
   justify-content: space-around !important;
 }
-
+.justify-content-between {
+  justify-content: space-between !important;
+}
 .justify-content-evenly {
   justify-content: space-evenly !important;
 }
@@ -2540,6 +2535,62 @@ nav {
 .btn-lg {
   font-size: 1.25rem;
   padding: 0.75em 1.5em;
+}
+
+.dropdown {
+  position: relative;
+}
+.dropdown:hover {
+  display: flex;
+}
+.dropdown > a {
+  color: #043a43;
+  position: relative;
+  display: flex;
+  align-items: center;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  border-radius: 0.375rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.dropdown .dropdown-menu {
+  background-color: #fff;
+  color: #043a43;
+  border: 1px solid #495057;
+  border-radius: 10px;
+  position: absolute;
+  z-index: 1000;
+  display: none;
+  min-width: 10rem;
+  padding: 0.5rem 0;
+  margin: 0;
+  font-size: 1rem;
+  text-align: left;
+  background-clip: padding-box;
+  top: 100%;
+  left: 0;
+  flex-direction: column;
+}
+.dropdown .dropdown-menu a {
+  color: #043a43;
+  display: block;
+  width: 100%;
+  padding: 0.25 1rem;
+  clear: both;
+  font-weight: 400;
+  color: #212529;
+  text-align: inherit;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
 }
 
 .header-top {
@@ -2979,7 +3030,9 @@ header.header-main .search-form button:hover {
     display: flex;
   }
 }
-*, ::after, ::before {
+*,
+::after,
+::before {
   box-sizing: border-box;
 }
 

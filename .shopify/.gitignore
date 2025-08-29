@@ -1,0 +1,4 @@
+# Ignore the entire .shopify directory
+personal.txt
+shopify.code-workspace
+.vscode

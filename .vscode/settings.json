@@ -1,0 +1,55 @@
+{
+    "folder-color.pathColors": [
+        {
+            "folderPath": "shopify/layout/",
+            "color": "foldercolorizer.color_0066ff"
+        },
+        {
+            "folderPath": "shopify/sections/",
+            "color": "foldercolorizer.color_00cc00"
+        },
+        {
+            "folderPath": "shopify/templates/",
+            "color": "foldercolorizer.color_666699"
+        },
+        {
+            "folderPath": "shopify/assets/",
+            "color": "foldercolorizer.color_ff6600"
+        },
+        {
+            "folderPath": "shopify/config/",
+            "color": "foldercolorizer.color_cc9900"
+        },
+        {
+            "folderPath": "shopify/assets/scss/",
+            "color": "foldercolorizer.color_777777"
+        },
+        {
+            "folderPath": "shopify/layout/theme.liquid/"
+        },
+        {
+            "folderPath": "shopify/.vscode/",
+            "color": "foldercolorizer.color_990033"
+        },
+        {
+            "folderPath": "shopify/.shopify/",
+            "color": "foldercolorizer.color_990033"
+        },
+        {
+            "folderPath": "shopify/.gitignore/",
+            "color": "foldercolorizer.color_990033"
+        },
+        {
+            "folderPath": "shopify/.shopifyignore/",
+            "color": "foldercolorizer.color_990033"
+        },
+        {
+            "folderPath": "shopify/personal.txt/",
+            "color": "foldercolorizer.color_990033"
+        },
+        {
+            "folderPath": "shopify/readme.txt/",
+            "color": "foldercolorizer.color_990033"
+        }
+    ]
+}

@@ -1,6 +1,6 @@
-@use "../variables/_global" as global;
+@use "../lib/variables/_global" as global;
 
-.header-top{
+.header-top {
     background-color: global.$color-primary;
     padding: 5px 20px;
     display: flex;
@@ -8,12 +8,12 @@
     align-items: center;
     justify-content: center;
 
-    *{
+    * {
         color: global.$color-white;
         font-size: 1rem;
         margin: 0;
         padding: 0;
 
-    }  
+    }
 
 }

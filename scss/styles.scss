@@ -16,36 +16,39 @@
 @use "lib/_borders" as borders;
 
 @use "lib/elements/_buttons";
-//Header-top
-@use "lib/elements/_header-top";
-//Header
-@use "lib/elements/_header";
-@use "lib/elements/_logo";
-@use "lib/elements/_footer";
+@use "lib/elements/_dropdown";
 
-*, ::after, ::before {
-    box-sizing: border-box;
+//Header-top
+@use "sections/_header-top";
+@use "sections/_header";
+@use "sections/_logo";
+@use "sections/_footer";
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
 }
 
-body{
-    background-color: global.$color-main-background;
-    padding: 0;
-    margin: 0;
-    font-size: global.$size-md;
+body {
+  background-color: global.$color-main-background;
+  padding: 0;
+  margin: 0;
+  font-size: global.$size-md;
 }
 
 // section banner
 
 .section-banner {
-    background-color: #043a43;
-    background-image: url(../img/banners/main-banner.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 80px 40px;
+  background-color: #043a43;
+  background-image: url(../img/banners/main-banner.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 40px;
 
   .banner-content {
     max-width: 800px;
@@ -67,4 +70,3 @@ body{
     color: global.$color-white;
   }
 }
-
