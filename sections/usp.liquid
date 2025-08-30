@@ -1,0 +1,103 @@
+<div
+  id="usp"
+  style="padding-top:{{  section.settings.padding_x }};padding-bottom:{{  section.settings.padding_x }};background-color:{{  section.settings.background_color }};"
+>
+  <div class="container">
+    <ul style="color:{{ section.settings.text_color }};font-size:{{  section.settings.text_size }};">
+      <li>
+        {{ section.settings.usp_1 }}
+      </li>
+      <li>
+        {{ section.settings.usp_2 }}
+      </li>
+      <li>
+        {{ section.settings.usp_3 }}
+      </li>
+      <li>
+        {{ section.settings.usp_4 }}
+      </li>
+    </ul>
+  </div>
+</div>
+
+<style>
+  #usp ul {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "USP List",
+  "settings": [
+    {
+      "type": "text",
+      "id": "usp_1",
+      "label": "USP Item 1",
+      "default": "Free Shipping"
+    },
+    {
+      "type": "text",
+      "id": "usp_2",
+      "label": "USP Item 2",
+      "default": "30-Day Returns"
+    },
+    {
+      "type": "text",
+      "id": "usp_3",
+      "label": "USP Item 3",
+      "default": "Secure Checkout"
+    },
+    {
+      "type": "text",
+      "id": "usp_4",
+      "label": "USP Item 4",
+      "default": "24/7 Support"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ddd"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#043a43"
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "label": "Text Size",
+      "min": 10,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "padding_x",
+      "label": "Padding Top/Bottom",
+      "min": 5,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 10
+    }
+  ],
+  "presets": [
+    {
+      "name": "USP List",
+      "category": "Header"
+    }
+  ]
+}
+{% endschema %}

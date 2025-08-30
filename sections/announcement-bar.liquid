@@ -7,9 +7,12 @@
     padding: 12px 0;
     text-align: center;
     height: {{ section.settings.bar_height }}px;
+    margin-bottom: {{ section.settings.magin-bottom }}px;
   "
 >
-  {{ section.settings.announcement_text }}
+  <div class="container">
+    {{ section.settings.announcement_text }}
+  </div>
 </div>
 
 {% schema %}
@@ -26,7 +29,7 @@
       "type": "color",
       "id": "background_color",
       "label": "Background Color",
-      "default": "#fff"
+      "default": "#ddd"
     },
     {
       "type": "color",
@@ -51,6 +54,15 @@
       "max": 120,
       "step": 1,
       "default": 48
+    },
+    {
+      "type": "range",
+      "id": "magin-bottom",
+      "label": "Margin Bottom (px)",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "default": 0
     }
   ],
   "presets": [

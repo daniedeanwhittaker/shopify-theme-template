@@ -1,64 +1,66 @@
 <!-- Product Page Layout -->
 <div class="product-page">
-  <div class="product-image">
-    <!-- Main Product Image -->
-    {% if product.featured_image %}
-      <div class="product-main-image">
-        <img src="{{ product.featured_image | image_url: width: 800 }}" alt="{{ product.title }}">
-      </div>
-    {% endif %}
-
-    <!-- Thumbnail Images -->
-    {% if product.images.size > 1 %}
-      <div class="product-thumbnails">
-        {% for image in product.images %}
-          <img src="{{ image | image_url: width: 120 }}" alt="{{ image.alt | escape }}" class="thumbnail">
-        {% endfor %}
-      </div>
-    {% endif %}
-  </div>
-  <div class="product-details">
-    <h1 class="product-title">{{ product.title }}</h1>
-    <p class="product-price">{{ product.price | money }}</p>
-
-    {% if product.compare_at_price > product.price %}
-      {% assign discount = product.compare_at_price | minus: product.price %}
-      <p>You save {{ discount | money }}</p>
-    {% endif %}
-
-    <!-- BEGIN PRODUCT FORM -->
-    {% form 'product', product %}
-      <!-- Variant Selector -->
-      {% if product.variants.size > 1 %}
-        <label for="product-select">Choose an option:</label>
-        <select name="id" id="product-select">
-          {% for variant in product.variants %}
-            <option
-              value="{{ variant.id }}"
-              {% if variant == product.selected_or_first_available_variant %}
-                selected
-              {% endif %}
-            >
-              {{ variant.title }} - {{ variant.price | money }}
-            </option>
-          {% endfor %}
-        </select>
-      {% else %}
-        <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+  <div class="container">
+    <div class="product-image">
+      <!-- Main Product Image -->
+      {% if product.featured_image %}
+        <div class="product-main-image">
+          <img src="{{ product.featured_image | image_url: width: 800 }}" alt="{{ product.title }}">
+        </div>
       {% endif %}
 
-      <!-- Quantity Selector -->
-      <label for="quantity">Quantity:</label>
-      <input type="number" id="quantity" name="quantity" value="1" min="1">
+      <!-- Thumbnail Images -->
+      {% if product.images.size > 1 %}
+        <div class="product-thumbnails">
+          {% for image in product.images %}
+            <img src="{{ image | image_url: width: 120 }}" alt="{{ image.alt | escape }}" class="thumbnail">
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+    <div class="product-details">
+      <h1 class="product-title">{{ product.title }}</h1>
+      <p class="product-price">{{ product.price | money }}</p>
 
-      <!-- Add to Cart Button -->
-      <button type="submit" class="btn btn--add-to-cart">Add to Cart</button>
-    {% endform %}
-    <!-- END PRODUCT FORM -->
+      {% if product.compare_at_price > product.price %}
+        {% assign discount = product.compare_at_price | minus: product.price %}
+        <p>You save {{ discount | money }}</p>
+      {% endif %}
 
-    <p class="product-description">
-      {{ product.description }}
-    </p>
+      <!-- BEGIN PRODUCT FORM -->
+      {% form 'product', product %}
+        <!-- Variant Selector -->
+        {% if product.variants.size > 1 %}
+          <label for="product-select">Choose an option:</label>
+          <select name="id" id="product-select">
+            {% for variant in product.variants %}
+              <option
+                value="{{ variant.id }}"
+                {% if variant == product.selected_or_first_available_variant %}
+                  selected
+                {% endif %}
+              >
+                {{ variant.title }} - {{ variant.price | money }}
+              </option>
+            {% endfor %}
+          </select>
+        {% else %}
+          <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+        {% endif %}
+
+        <!-- Quantity Selector -->
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" value="1" min="1">
+
+        <!-- Add to Cart Button -->
+        <button type="submit" class="btn btn--add-to-cart">Add to Cart</button>
+      {% endform %}
+      <!-- END PRODUCT FORM -->
+
+      <p class="product-description">
+        {{ product.description }}
+      </p>
+    </div>
   </div>
 </div>
 

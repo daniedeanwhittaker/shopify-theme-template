@@ -6,11 +6,6 @@
 .dropdown {
     position: relative;
 
-    &:hover {
-        display: flex;
-    }
-
-
     &>a {
         color: global.$color-primary;
         position: relative;
@@ -28,6 +23,10 @@
         transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
     }
 
+    &:hover .dropdown-menu {
+        display: flex;
+    }
+
     .dropdown-menu {
         background-color: global.$color-white;
         color: global.$color-primary;
@@ -36,15 +35,17 @@
         position: absolute;
         z-index: 1000;
         display: none;
+        flex-direction: column;
         min-width: 10rem;
         padding: 0.5rem 0;
         margin: 0;
         font-size: 1rem;
         text-align: left;
         background-clip: padding-box;
-        top: 100%;
+        top: 99%;
         left: 0;
-        flex-direction: column;
+        align-content: flex-start;
+        height: auto;
 
         a {
             color: global.$color-primary;
@@ -53,13 +54,13 @@
             padding: 0.25 1rem;
             clear: both;
             font-weight: 400;
-            color: #212529;
             text-align: inherit;
             text-decoration: none;
             white-space: nowrap;
             background-color: transparent;
             border: 0;
             border-radius: 0;
+            line-height: 2rem;
         }
     }
 }

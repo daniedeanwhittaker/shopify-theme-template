@@ -2,20 +2,17 @@
 @use "../lib/variables/_layout" as layout;
 @use 'sass:color';
 
-$heading-height: 80px;
+$heading-height: auto;
 
 // header
 header.header-main {
-    width: 100%;
-    padding: 0 60px;
     height: $heading-height;
+    width: 100%;
+    padding: 20px 60px;
     background-color: #fff;
     display: flex;
     justify-content: space-between;
     position: relative;
-    top: 0;
-    left: 0;
-    right: 0;
     z-index: 100;
 
     &.active {
@@ -54,6 +51,7 @@ header.header-main {
                 padding: 0 15px;
                 white-space: nowrap;
                 transition: all ease-in-out 100ms;
+                line-height: normal;
 
                 &:hover {
                     background-color: global.$color-primary;
@@ -143,7 +141,7 @@ header.header-main {
         display: flex;
         gap: 0.5rem;
         height: 80px;
-        margin-right: 0;
+        margin: 0;
 
         label {
             display: none; // Hide label for search input
@@ -181,6 +179,11 @@ header.header-main {
                 background: color.adjust(global.$color-primary, $lightness: -20%);
             }
         }
+    }
+
+    .dropdown>a {
+        height: 100%;
+        padding: 0 10px;
     }
 }
 

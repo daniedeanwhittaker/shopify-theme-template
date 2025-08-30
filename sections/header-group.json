@@ -14,9 +14,19 @@
     "header": {
       "type": "header",
       "settings": {}
+    },
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "settings": {}
+    },
+    "usp": {
+      "type": "usp",
+      "settings": {}
     }
   },
   "order": [
-    "header"
+    "announcement-bar",
+    "header",
+    "usp"
   ]
 }

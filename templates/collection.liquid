@@ -1,21 +1,23 @@
-<!-- collection.liquid -->
-<h1>{{ collection.title }}</h1>
-<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
-  {% for product in collection.products %}
-    <div style="border: 1px solid #eee; padding: 16px; text-align: center;">
-      <a href="{{ product.url }}">
-        <img
-          src="{{ product.featured_image | img_url: 'medium' }}"
-          alt="{{ product.title }}"
-          style="max-width: 100%; height: auto;"
-        >
-        <h2 style="font-size: 1.1em; margin: 12px 0 8px;">{{ product.title }}</h2>
-        <p>{{ product.price | money }}</p>
-      </a>
-      <form method="post" action="/cart/add">
-        <input type="hidden" name="id" value="{{ product.variants.first.id }}">
-        <button type="submit" style="margin-top: 8px;">Add to Cart</button>
-      </form>
-    </div>
-  {% endfor %}
+<div class="container">
+  <!-- collection.liquid -->
+  <h1>{{ collection.title }}</h1>
+  <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+    {% for product in collection.products %}
+      <div style="border: 1px solid #eee; padding: 16px; text-align: center;">
+        <a href="{{ product.url }}">
+          <img
+            src="{{ product.featured_image | img_url: 'medium' }}"
+            alt="{{ product.title }}"
+            style="max-width: 100%; height: auto;"
+          >
+          <h2 style="font-size: 1.1em; margin: 12px 0 8px;">{{ product.title }}</h2>
+          <p>{{ product.price | money }}</p>
+        </a>
+        <form method="post" action="/cart/add">
+          <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+          <button type="submit" style="margin-top: 8px;">Add to Cart</button>
+        </form>
+      </div>
+    {% endfor %}
+  </div>
 </div>

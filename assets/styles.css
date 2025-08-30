@@ -2540,9 +2540,6 @@ nav {
 .dropdown {
   position: relative;
 }
-.dropdown:hover {
-  display: flex;
-}
 .dropdown > a {
   color: #043a43;
   position: relative;
@@ -2559,23 +2556,28 @@ nav {
   border-radius: 0.375rem;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
+.dropdown:hover .dropdown-menu {
+  display: flex;
+}
 .dropdown .dropdown-menu {
   background-color: #fff;
   color: #043a43;
-  border: 1px solid #495057;
+  border: 1px solid #dee2e6;
   border-radius: 10px;
   position: absolute;
   z-index: 1000;
   display: none;
+  flex-direction: column;
   min-width: 10rem;
   padding: 0.5rem 0;
   margin: 0;
   font-size: 1rem;
   text-align: left;
   background-clip: padding-box;
-  top: 100%;
+  top: 99%;
   left: 0;
-  flex-direction: column;
+  align-content: flex-start;
+  height: auto;
 }
 .dropdown .dropdown-menu a {
   color: #043a43;
@@ -2584,13 +2586,13 @@ nav {
   padding: 0.25 1rem;
   clear: both;
   font-weight: 400;
-  color: #212529;
   text-align: inherit;
   text-decoration: none;
   white-space: nowrap;
   background-color: transparent;
   border: 0;
   border-radius: 0;
+  line-height: 2rem;
 }
 
 .header-top {
@@ -2609,16 +2611,13 @@ nav {
 }
 
 header.header-main {
+  height: auto;
   width: 100%;
-  padding: 0 60px;
-  height: 80px;
+  padding: 20px 60px;
   background-color: #fff;
   display: flex;
   justify-content: space-between;
   position: relative;
-  top: 0;
-  left: 0;
-  right: 0;
   z-index: 100;
   /* Main navigation */
   /*-- Mobile menu icon --*/
@@ -2653,10 +2652,11 @@ header.header-main ul li a {
   font-size: 1rem;
   height: 100%;
   text-decoration: none;
-  line-height: 80px;
+  line-height: auto;
   padding: 0 15px;
   white-space: nowrap;
   transition: all ease-in-out 100ms;
+  line-height: normal;
 }
 header.header-main ul li a:hover {
   background-color: #043a43;
@@ -2704,8 +2704,8 @@ header.header-main .mobile-menu-icon {
   cursor: pointer;
   display: none;
   font-size: 1.5rem;
-  height: 80px;
-  line-height: 80px;
+  height: auto;
+  line-height: auto;
   padding: 0 20px;
   position: absolute;
   right: 0;
@@ -2725,7 +2725,7 @@ header.header-main .search-form {
   display: flex;
   gap: 0.5rem;
   height: 80px;
-  margin-right: 0;
+  margin: 0;
 }
 header.header-main .search-form label {
   display: none;
@@ -2757,6 +2757,10 @@ header.header-main .search-form button i {
 }
 header.header-main .search-form button:hover {
   background: hsl(188.5714285714, 88.7323943662%, -6.0784313725%);
+}
+header.header-main .dropdown > a {
+  height: 100%;
+  padding: 0 10px;
 }
 
 @media (min-width: 720px) and (max-width: 1140px) {
@@ -2805,9 +2809,9 @@ header.header-main .search-form button:hover {
     height: 100%;
     left: 0;
     overflow: auto;
-    padding-bottom: 100px;
+    padding-bottom: auto20px;
     position: absolute;
-    top: 80px;
+    top: auto;
     width: 100%;
     z-index: 999;
   }
@@ -3037,7 +3041,7 @@ header.header-main .search-form button:hover {
 }
 
 body {
-  background-color: #f5f5f5;
+  background-color: #fff;
   padding: 0;
   margin: 0;
   font-size: clamp(1rem, 0.23vi + 0.94rem, 1.13rem);
