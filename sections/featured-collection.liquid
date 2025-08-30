@@ -1,0 +1,96 @@
+{% assign collection = section.settings.collection %}
+{% if collection %}
+  <section class="featured-collection-section">
+    <h2 class="featured-collection-title">
+      {{ collection.title }}
+    </h2>
+    <div class="featured-collection-products">
+      {% for product in collection.products limit: section.settings.products_limit %}
+        <div class="featured-collection-product">
+          <a href="{{ product.url }}" title="{{ product.title }}">
+            {% if product.featured_image %}
+              <img src="{{ product.featured_image | img_url: '400x' }}" alt="{{ product.title }}">
+            {% endif %}
+            <h3 class="product-title">{{ product.title }}</h3>
+            <span class="product-price">{{ product.price | money }}</span>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+  <style>
+    .featured-collection-section {
+      padding: 40px 0;
+      background: #fafafa;
+      text-align: center;
+    }
+    .featured-collection-title {
+      font-size: 2rem;
+      margin-bottom: 32px;
+      color: #222;
+    }
+    .featured-collection-products {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      justify-content: center;
+    }
+    .featured-collection-product {
+      background: #fff;
+      border: 1px solid #eee;
+      border-radius: 8px;
+      padding: 16px;
+      width: 220px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      transition: box-shadow 0.2s;
+    }
+    .featured-collection-product:hover {
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    }
+    .featured-collection-product img {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+      margin-bottom: 12px;
+    }
+    .product-title {
+      font-size: 1.1rem;
+      margin: 8px 0;
+      color: #333;
+    }
+    .product-price {
+      font-size: 1rem;
+      color: #007a5c;
+      font-weight: bold;
+    }
+  </style>
+{% else %}
+  <p>No collection selected.</p>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Featured Collection",
+  "settings": [
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    },
+    {
+      "type": "range",
+      "id": "products_limit",
+      "label": "Number of products to show",
+      "min": 1,
+      "max": 12,
+      "step": 1,
+      "default": 4
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured Collection"
+    }
+  ]
+}
+{% endschema %}

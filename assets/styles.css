@@ -2309,6 +2309,40 @@ nav {
   }
 }
 
+.container-flex {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  display: flex;
+}
+@media (min-width: 540px) {
+  .container-flex {
+    max-width: 540px;
+  }
+}
+@media (min-width: 720px) {
+  .container-flex {
+    max-width: 720px;
+  }
+}
+@media (min-width: 960px) {
+  .container-flex {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1140px) {
+  .container-flex {
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1320px) {
+  .container-flex {
+    max-width: 1320px;
+  }
+}
+
 .justify-content-start {
   justify-content: flex-start !important;
 }

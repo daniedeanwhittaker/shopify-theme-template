@@ -1,30 +1,32 @@
 <section class="hero-banner">
   {% if section.settings.background_image %}
-    <div
-      class="hero-bg"
-      style="background-image:url({{ section.settings.background_image | image_url }});"
-    ></div>
+    <div class="hero-bg" style="background-image:url({{ section.settings.background_image | image_url }});">
   {% endif %}
-  <div class="hero-content">
-    <h1>
-      {{ section.settings.hero_heading }}
-    </h1>
-    <h2>
-      {{ section.settings.hero_subheading }}
-    </h2>
-    <p>
-      {{ section.settings.hero_description }}
-    </p>
-    {% if section.settings.hero_button_text and section.settings.hero_button_link %}
-      <a
-        href="{{ section.settings.hero_button_link }}"
-        class="hero-btn"
-        title="{{ section.settings.hero_button_text }}"
-      >
-        {{ section.settings.hero_button_text }}
-      </a>
-    {% endif %}
+
+  <div class="container-flex justify-content-{{ section.settings.content_position }}">
+    <div
+      class="hero-content"
+      style="max-width:{{  section.settings.text_container_width }}; align-items:{{ section.settings.alignment }};background-color:{{ section.settings.content_background_color }};"
+    >
+      <h1>{{ section.settings.hero_heading }}</h1>
+      <h2>{{ section.settings.hero_subheading }}</h2>
+      <p>{{ section.settings.hero_description }}</p>
+
+      {% if section.settings.hero_button_text or section.settings.hero_button_link %}
+        <a
+          href="{{ section.settings.hero_button_link }}"
+          class="btn btn-primary btn-{{ section.settings.button_size }}"
+          title="{{ section.settings.hero_button_text }}"
+        >
+          {{ section.settings.hero_button_text }}
+        </a>
+      {% endif %}
+    </div>
   </div>
+
+  {% if section.settings.background_image %}
+    </div>
+  {% endif %}
 </section>
 
 <style>
@@ -51,12 +53,19 @@
     z-index: 2;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
     min-height: 500px;
     padding: 40px 20px;
-    text-align: center;
     color: #fff;
+  }
+  .hero-banner .hero-content-center {
+    justify-content: flex-end;
+  }
+  .hero-banner .hero-content-left {
+    justify-content: start;
+  }
+  .hero-banner .hero-content-right {
+    justify-content: flex-end;
   }
   .hero-banner .hero-content * {
     color: #fff;
@@ -80,33 +89,6 @@
     margin-bottom: 2rem;
     text-shadow: 0 1px 6px rgba(0, 0, 0, 0.15);
   }
-  .hero-banner .hero-btn {
-    display: inline-block;
-    padding: 0.75em 2em;
-    background: #ff6f61;
-    color: #fff;
-    font-size: 1.1rem;
-    font-weight: 600;
-    border-radius: 30px;
-    text-decoration: none;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-    transition: background 0.2s;
-  }
-  .hero-banner .hero-btn:hover {
-    background: #e55d50;
-  }
-  @media (max-width: 600px) {
-    .hero-banner .hero-content h1 {
-      font-size: 2rem;
-    }
-    .hero-banner .hero-content h2 {
-      font-size: 1.1rem;
-    }
-    .hero-banner .hero-content {
-      min-height: 300px;
-      padding: 20px 10px;
-    }
-  }
 </style>
 
 {% schema %}
@@ -119,10 +101,32 @@
       "label": "Background Image"
     },
     {
+      "type": "select",
+      "id": "content_position",
+      "label": "Content Position",
+      "options": [
+        { "value": "start", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "end", "label": "Right" }
+      ],
+      "default": "start"
+    },
+    {
       "type": "text",
       "id": "hero_heading",
       "label": "Heading",
       "default": "Welcome to Our Store"
+    },
+    {
+      "type": "select",
+      "id": "alignment",
+      "label": "Text alignment",
+      "options": [
+        { "value": "flex-start", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "flex-end", "label": "Right" }
+      ],
+      "default": "flex-start"
     },
     {
       "type": "text",
@@ -137,16 +141,44 @@
       "default": "Shop the best products curated just for you."
     },
     {
+      "type": "range",
+      "id": "text_container_width",
+      "label": "Text Container Width",
+      "min": 500,
+      "max": 2000,
+      "step": 50,
+      "unit": "px",
+      "default": 600
+    },
+    {
+      "type": "color",
+      "id": "content_background_color",
+      "label": "Text content background color",
+      "default": "transparent"
+    },
+    {
       "type": "text",
       "id": "hero_button_text",
       "label": "Button Text",
-      "default": "Shop Now"
+      "default": "Shop All"
     },
     {
       "type": "url",
       "id": "hero_button_link",
       "label": "Button Link",
       "default": "/collections/all"
+    },
+    {
+      "type": "select",
+      "id": "button_size",
+      "label": "Button Size",
+      "options": [
+        { "value": "sm", "label": "Small" },
+        { "value": "md", "label": "Medium" },
+        { "value": "lg", "label": "Large" },
+        { "value": "xl", "label": "Extra Large" }
+      ],
+      "default": "lg"
     }
   ],
   "presets": [

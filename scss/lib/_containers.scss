@@ -35,3 +35,20 @@ $container-widths: (
     }
   }
 }
+
+.container-flex {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  display: flex;
+
+  @each $breakpoint, $min-width in $breakpoints {
+    @if map.has-key($container-widths, $breakpoint) {
+      @media (min-width: $min-width) {
+        max-width: map.get($container-widths, $breakpoint);
+      }
+    }
+  }
+}
