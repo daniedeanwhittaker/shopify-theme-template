@@ -1,7 +1,7 @@
-@use "../lib/variables/_global" as global;
+@use "../lib/_variables" as variables;
 
 .header-top {
-    background-color: global.$color-primary;
+    background-color: variables.$color-primary;
     padding: 5px 20px;
     display: flex;
     flex-direction: row;
@@ -9,7 +9,7 @@
     justify-content: center;
 
     * {
-        color: global.$color-white;
+        color: variables.$color-white;
         font-size: 1rem;
         margin: 0;
         padding: 0;

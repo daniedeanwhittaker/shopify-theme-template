@@ -12,9 +12,84 @@
     "settings": [
       {
         "type": "color",
-        "id": "primary_color",
+        "id": "color_primary",
         "label": "Primary Color",
-        "default": "#000000"
+        "default": "#043a43"
+      },
+      {
+        "type": "color",
+        "id": "color_secondary",
+        "label": "Secondary Color",
+        "default": "#005C53"
+      },
+      {
+        "type": "color",
+        "id": "color_main_background",
+        "label": "Main background Color",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "color_h1",
+        "label": "Heading 1 Colour",
+        "default": "#043a43"
+      },
+      {
+        "type": "color",
+        "id": "color_h2",
+        "label": "Heading 2 Colour",
+        "default": "#043a43"
+      },
+      {
+        "type": "color",
+        "id": "color_h3",
+        "label": "Heading 3 Colour",
+        "default": "#043a43"
+      },
+      {
+        "type": "color",
+        "id": "color_h4",
+        "label": "Heading 4 Colour",
+        "default": "#043a43"
+      },
+      {
+        "type": "color",
+        "id": "color_h5",
+        "label": "Heading 5 Colour",
+        "default": "#043a43"
+      },
+      {
+        "type": "color",
+        "id": "color_h6",
+        "label": "Heading 6 Colour",
+        "default": "#043a43"
+      },
+      {
+        "type": "color",
+        "id": "color_text",
+        "label": "Paragraph Colour",
+        "default": "#043a43"
+      }
+    ]
+  },
+  {
+    "name": "Typography",
+    "settings": [
+      {
+        "type": "font_picker",
+        "id": "font_primary",
+        "label": "Primary Font",
+        "default": "sans-serif"
+      },
+      {
+        "type": "range",
+        "id": "font_size_base",
+        "label": "Base Font Size",
+        "min": 12,
+        "max": 24,
+        "step": 1,
+        "default": 16,
+        "unit": "px"
       }
     ]
   }

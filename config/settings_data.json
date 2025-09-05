@@ -1,5 +1,14 @@
-[
-    {
-        "current": {}
+{
+    "current": {
+        "theme": {
+            "color_scheme": "default",
+            "font_family": "Arial, sans-serif"
+        },
+        "cart": {
+            "enable_ajax": true
+        },
+        "footer": {
+            "show_newsletter": true
+        }
     }
-]
+}

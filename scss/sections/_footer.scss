@@ -1,16 +1,11 @@
 // _foeeoter.scss
-@use "../lib/variables/_global" as global;
-@use "../lib/variables/_layout" as layout;
+@use "../lib/_variables" as variables;
 @use 'sass:color';
 
 .footer {
-    background-color: global.$color-dark;
+    background-color: variables.$color-dark;
     padding: 60px;
     height: auto;
-
-    * {
-        color: global.$color-white;
-    }
 
     /*-- footer --*/
     .footer-content {
@@ -42,7 +37,7 @@
         padding: 10px;
         display: block;
         margin-bottom: 10px;
-        border-bottom: 1px solid global.$color-grey-700;
+        border-bottom: 1px solid variables.$color-grey-700;
     }
 
     .nav {
@@ -78,7 +73,7 @@
     .footer-bottom {
         text-align: center;
         margin-top: 2rem;
-        border-top: 1px solid global.$color-grey-700;
+        border-top: 1px solid variables.$color-grey-700;
         padding-top: 1rem;
         font-size: 0.75rem;
     }
@@ -86,7 +81,7 @@
 
 /* Media Quries */
 
-@media (max-width: layout.$container-md) {
+@media (max-width: variables.$container-md) {
     .footer .footer-content {
         display: flex;
         flex-direction: column;
@@ -99,7 +94,7 @@
             padding: 10px;
             display: block;
             margin-bottom: 10px;
-            border-bottom: 1px solid global.$color-grey-700;
+            border-bottom: 1px solid variables.$color-grey-700;
         }
 
         .nav {

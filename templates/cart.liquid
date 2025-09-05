@@ -1,14 +1,14 @@
 <div class="cart-container">
-  <div class="cart-title">Your Shopping Cart</div>
+  <div class="cart-title">{{ 'cart.page_title' | t }}</div>
   {% if cart.item_count > 0 %}
     <table class="cart-table">
       <thead>
         <tr>
-          <th>Product</th>
-          <th>Title</th>
-          <th>Qty</th>
-          <th>Price</th>
-          <th>Line Total</th>
+          <th>{{ 'cart.product' | t }}</th>
+          <th>{{ 'cart.title' | t }}</th>
+          <th>{{ 'cart.qty' | t }}</th>
+          <th>{{ 'cart.price' | t }}</th>
+          <th>{{ 'cart.line_total' | t }}</th>
         </tr>
       </thead>
       <tbody>
@@ -16,7 +16,7 @@
           <tr>
             <td>
               {% if item.image %}
-                <img src="{{ item.image | img_url: 'medium' }}" alt="{{ item.title }}" class="cart-product-img">
+                <img src="{{ item.image | img_url: 'medium' }}" alt="{{ item.page_title }}" class="cart-product-img">
               {% else %}
                 <div
                   class="cart-product-img"
@@ -42,9 +42,9 @@
     <div class="cart-total">
       Cart Total: <strong>{{ cart.total_price | money }}</strong>
     </div>
-    <a href="/checkout" title="Checkout" class="checkout-btn">Proceed to Checkout</a>
+    <a href="/checkout" title="{{ 'cart.proceed' | t }}" class="checkout-btn">{{ 'cart.proceed' | t }}</a>
   {% else %}
-    <div class="empty-cart">Your cart is currently empty.</div>
+    <div class="empty-cart">{{ 'cart.empty' | t }}</div>
   {% endif %}
 </div>
 <style>

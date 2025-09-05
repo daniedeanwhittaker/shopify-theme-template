@@ -1,13 +1,13 @@
 // _footer.scss
-@use "../variables/_global" as global;
-@use "../_borders" as borders;
+@use "../_variables" as variables;
+@use "../_mixings" as mixings;
 @use 'sass:color';
 
 .dropdown {
     position: relative;
 
     &>a {
-        color: global.$color-primary;
+        color: variables.$color-primary;
         position: relative;
         display: flex;
         align-items: center;
@@ -28,10 +28,10 @@
     }
 
     .dropdown-menu {
-        background-color: global.$color-white;
-        color: global.$color-primary;
-        border: borders.$border;
-        @include borders.radius(10px);
+        background-color: variables.$color-white;
+        color: variables.$color-primary;
+        border: variables.$border;
+        @include mixings.radius(10px);
         position: absolute;
         z-index: 1000;
         display: none;
@@ -48,7 +48,7 @@
         height: auto;
 
         a {
-            color: global.$color-primary;
+            color: variables.$color-primary;
             display: block;
             width: 100%;
             padding: 0.25 1rem;

@@ -63,70 +63,15 @@
     </div>
   </div>
 </div>
-
-<style>
-  .product-page {
-    display: flex;
-    max-width: 900px;
-    margin: 40px auto;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-    overflow: hidden;
-  }
-  .product-image {
-    flex: 1;
-    background: #f7f7f7;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 40px;
-  }
-  .product-image img {
-    max-width: 100%;
-    border-radius: 6px;
-  }
-  .product-details {
-    flex: 1;
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  .product-title {
-    font-size: 2rem;
-    margin-bottom: 16px;
-  }
-  .product-price {
-    font-size: 1.5rem;
-    color: #2a9d8f;
-    margin-bottom: 24px;
-  }
-  .add-to-cart {
-    background: #2a9d8f;
-    color: #fff;
-    border: none;
-    padding: 14px 32px;
-    font-size: 1rem;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-bottom: 24px;
-    transition: background 0.2s;
-  }
-  .add-to-cart:hover {
-    background: #21867a;
-  }
-  .product-description {
-    color: #555;
-    font-size: 1rem;
-  }
-  @media (max-width: 700px) {
-    .product-page {
-      flex-direction: column;
+{% schema %}
+{
+  "name": "Main Product",
+  "tag": "section",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Main Product"
     }
-    .product-image,
-    .product-details {
-      padding: 24px;
-    }
-  }
-</style>
+  ]
+}
+{% endschema %}

@@ -2,15 +2,19 @@
 <footer class="footer">
   <div class="container">
     <!-- logo -->
-    <a href="{{ routes.root_url }}" class="logo" title="{{ shop.name }}">
-      {% if shop.brand.logo %}
-        <img src="{{ shop.brand.logo | img_url: '200x' }}" alt="{{ shop.name }}">
-      {% else %}
-        <span class="shop-name">
-          {{ shop.name }}
-        </span>
-      {% endif %}
-    </a>
+
+    <!-- IF -->
+    {% if section.settings.show_footer_logo %}
+      <a href="{{ routes.root_url }}" class="logo" title="{{ shop.name }}">
+        {% if shop.brand.logo %}
+          <img src="{{ shop.brand.logo | img_url: '200x' }}" alt="{{ shop.name }}">
+        {% else %}
+          <span class="shop-name">
+            {{ shop.name }}
+          </span>
+        {% endif %}
+      </a>
+    {% endif %}
 
     <nav class="nav">
       <span class="nav-title">Quick Links</span>
@@ -48,5 +52,53 @@
         </li>
       </ul>
     </nav>
+
+    <div class="footer-wrapper">
+      <h2 class="footer-form-heading">Subscribe to our newsletter</h2>
+      {% form 'contact' %}
+        <input type="hidden" name="form_type" value="customer">
+        <input type="hidden" name="utf8" value="">
+        <label for="footer-email" class="footer-form-label">Email address</label>
+        <input type="email" id="footer-email" name="contact[email]" class="footer-form-input" required>
+
+        <button type="submit" class="footer-form-button">Subscribe</button>
+      {% endform %}
+    </div>
+
+    <style>
+      .footer-wrapper {
+        padding: 2rem;
+        background-color: #f8f8f8;
+        text-align: center;
+        border-top: 1px solid #ddd;
+      }
+
+      .footer-heading {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: #333;
+      }
+    </style>
   </div>
 </footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_footer_logo",
+      "label": "Show Logo",
+      "default": true,
+      "info": "Show Logo in Footer."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Footer",
+      "category": "Footer"
+    }
+  ]
+}
+{% endschema %}

@@ -1,6 +1,6 @@
-@use "variables/_global" as global;
+@use "../_variables" as variables;
 
-nav{
+nav {
     position: relative;
     z-index: 1000;
 }

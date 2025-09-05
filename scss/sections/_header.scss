@@ -1,5 +1,4 @@
-@use "../lib/variables/_global" as global;
-@use "../lib/variables/_layout" as layout;
+@use "../lib/_variables" as variables;
 @use 'sass:color';
 
 $heading-height: auto;
@@ -54,7 +53,7 @@ header.header-main {
                 line-height: normal;
 
                 &:hover {
-                    background-color: global.$color-primary;
+                    background-color: variables.$color-primary;
                     color: #fff;
                 }
 
@@ -110,7 +109,7 @@ header.header-main {
     /*-- Mobile menu icon --*/
     .mobile-menu-icon {
         align-self: center;
-        color: global.$color-primary;
+        color: variables.$color-primary;
         cursor: pointer;
         display: none; // Hide on larger screens
         font-size: 1.5rem;
@@ -157,13 +156,13 @@ header.header-main {
             margin-left: 20px;
 
             &:focus-visible {
-                outline: 2px solid global.$color-primary;
+                outline: 2px solid variables.$color-primary;
                 outline-offset: 2px;
             }
         }
 
         button {
-            background: global.$color-primary;
+            background: variables.$color-primary;
             color: #fff;
             border: none;
             padding: 0.5rem 0.75rem;
@@ -176,7 +175,7 @@ header.header-main {
             }
 
             &:hover {
-                background: color.adjust(global.$color-primary, $lightness: -20%);
+                background: color.adjust(variables.$color-primary, $lightness: -20%);
             }
         }
     }
@@ -188,7 +187,7 @@ header.header-main {
 }
 
 // Media Queries
-@media (min-width: layout.$container-md) and (max-width: layout.$container-xl) {
+@media (min-width: variables.$container-md) and (max-width: variables.$container-xl) {
     header.header-main ul li.social-links {
         display: none !important;
     }
@@ -286,8 +285,8 @@ header.header-main {
                             a {
                                 line-height: 50px;
                                 height: 50px;
-                                color: global.$color-white;
-                                background-color: global.$color-primary;
+                                color: variables.$color-white;
+                                background-color: variables.$color-primary;
                             }
                         }
 
@@ -296,7 +295,7 @@ header.header-main {
 
                     //submenu toggle button
                     .sub-toggle {
-                        color: global.$color-primary;
+                        color: variables.$color-primary;
                         display: block;
                         position: absolute;
                         right: 0;

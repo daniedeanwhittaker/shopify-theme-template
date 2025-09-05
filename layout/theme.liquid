@@ -2,19 +2,32 @@
   <head>
     <title>{{ page_title }}</title>
     {{ content_for_header }}
+
+    <style>
+      :root {
+        /* Colors */
+        --color-primary: {{ settings.color_primary }};
+        --color-secondary: {{ settings.color_secondary }};
+        --color-main-background: {{ settings.color_main_background }};
+        --color-h1: {{ settings.color_h1 }};
+        --color-h2: {{ settings.color_h2 }};
+        --color-h3: {{ settings.color_h3 }};
+        --color-h4: {{ settings.color_h4 }};
+        --color-h5: {{ settings.color_h5 }};
+        --color-h6: {{ settings.color_h6 }};
+        --color-text: {{ settings.color_text }};
+      }
+    </style>
     {{ 'styles.css' | asset_url | stylesheet_tag }}
     {{ 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css' | stylesheet_tag }}
   </head>
   <body>
     {% section 'header-top' %}
 
-    <!-- This is hard coded file {/% section 'header' %/} -->
-    <!-- doing it this way includes the json and creates the ability to edit the file within shopify -->
-    <!-- Shopify can then write to header-group.json -->
     {% sections 'header-group' %}
 
     {{ content_for_layout }}
 
-    {% section 'footer' %}
+    {% sections 'footer-group' %}
   </body>
 </html>

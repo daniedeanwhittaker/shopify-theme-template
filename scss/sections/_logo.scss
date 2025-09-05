@@ -1,4 +1,4 @@
-@use "../lib/variables/_global" as global;
+@use "../lib/_variables" as variables;
 @use 'sass:color';
 
 
@@ -23,18 +23,18 @@
 
     &:hover {
         .logo-ctrl {
-            background: color.adjust(global.$color-primary, $lightness: -20%);
+            background: color.adjust(variables.$color-primary, $lightness: -20%);
         }
 
         .logo-build {
-            color: color.adjust(global.$color-primary, $lightness: -20%);
+            color: color.adjust(variables.$color-primary, $lightness: -20%);
         }
     }
 
     .logo-ctrl {
         width: 75px;
         height: 36px;
-        background-color: global.$color-primary;
+        background-color: variables.$color-primary;
         border-top-left-radius: 5px;
         border-top-right-radius: 5px;
         border-bottom-right-radius: 5px;
@@ -46,7 +46,7 @@
     }
 
     .logo-build {
-        color: global.$color-primary;
+        color: variables.$color-primary;
         font-size: 30px;
         font-weight: bold;
         letter-spacing: -1px;
@@ -59,21 +59,21 @@
 
     &:hover {
         .logo-ctrl {
-            background: color.adjust(global.$color-white, $lightness: -20%);
+            background: color.adjust(variables.$color-white, $lightness: -20%);
         }
 
         .logo-build {
-            color: color.adjust(global.$color-white, $lightness: -20%);
+            color: color.adjust(variables.$color-white, $lightness: -20%);
         }
     }
 
     .logo-ctrl {
-        background-color: global.$color-white;
-        color: global.$color-dark;
+        background-color: variables.$color-white;
+        color: variables.$color-dark;
     }
 
     .logo-build {
-        color: global.$color-white;
+        color: variables.$color-white;
     }
 }
 

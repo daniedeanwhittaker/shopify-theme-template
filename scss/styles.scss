@@ -1,28 +1,32 @@
 // - Console commands 
-// sass --watch themes/ctrl-build/assets/scss/styles.scss:themes/ctrl-build/assets/css/styles.css
-// - sass themes/ctrl-build/assets/scss/styles.scss themes/ctrl-build/assets/css/styles.css
+// sass --watch scss/styles.scss:assets/css/styles.css
 
 //Variables
-@use "lib/variables/_global" as global;
-@use "lib/_typography";
-@use "lib/_table";
-@use "lib/_layout";
-@use "lib/_positioning";
-@use "lib/_spacing";
-@use "lib/_nav";
-@use "lib/_columns";
-@use "lib/_containers";
-@use "lib/_flex";
-@use "lib/_borders" as borders;
+@use "lib/_variables" as variables;
+@use "lib/_mixings" as mixings;
+
+@use "lib/utilities/_typography";
+@use "lib/utilities/_layout";
+@use "lib/utilities/_positioning";
+@use "lib/utilities/_spacing";
+@use "lib/utilities/_columns";
+@use "lib/utilities/_containers";
+@use "lib/utilities/_flex";
 
 @use "lib/elements/_buttons";
 @use "lib/elements/_dropdown";
+@use "lib/elements/_forms";
+@use "lib/elements/_nav";
+@use "lib/elements/_table";
 
 //Header-top
 @use "sections/_header-top";
 @use "sections/_header";
 @use "sections/_logo";
 @use "sections/_footer";
+
+//Pages
+@use "pages/_product-page";
 
 *,
 ::after,
@@ -31,10 +35,11 @@
 }
 
 body {
-  background-color: global.$color-main-background;
+  background-color: variables.$color-main-background;
+  font-size: variables.$size-md;
+  color: variables.$color-body;
   padding: 0;
   margin: 0;
-  font-size: global.$size-md;
 }
 
 // section banner
@@ -55,18 +60,18 @@ body {
     background-color: rgba(0, 0, 0, 0.5);
     margin: 0 auto 0 0;
     padding: 50px;
-    @include borders.radius(10px); // Default: 4px
+    @include mixings.radius(10px); // Default: 4px
   }
 
   .banner-title {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    color: global.$color-white;
+    color: variables.$color-white;
   }
 
   .banner-subtitle {
     font-size: 1.25rem;
     margin-bottom: 2rem;
-    color: global.$color-white;
+    color: variables.$color-white;
   }
 }

@@ -1,0 +1,78 @@
+@use "../_variables" as variables;
+
+.container,
+.container-fluid,
+.container-xxl,
+.container-xl,
+.container-lg,
+.container-md,
+.container-sm,
+.container-xs {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  width: 100%;
+  padding-right: calc(var(--bs-gutter-x) * 0.5);
+  padding-left: calc(var(--bs-gutter-x) * 0.5);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* container small */
+.container-sm,
+.container {
+  max-width: variables.$container-xs;
+}
+
+/* container small */
+@media (min-width: variables.$container-sm) {
+
+  .container-sm,
+  .container {
+    max-width: variables.$container-sm;
+  }
+}
+
+/* container medium */
+@media (min-width: variables.$container-md) {
+
+  .container-md,
+  .container-sm,
+  .container {
+    max-width: variables.$container-md;
+  }
+}
+
+/* container large */
+@media (min-width: variables.$container-lg) {
+
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container {
+    max-width: variables.$container-lg;
+  }
+}
+
+/* container extra large */
+@media (min-width: variables.$container-xl) {
+
+  .container-xl,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container {
+    max-width: variables.$container-xl;
+  }
+}
+
+@media (min-width: variables.$container-xxl) {
+
+  .container-xxl,
+  .container-xl,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container {
+    max-width: variables.$container-xxl;
+  }
+}

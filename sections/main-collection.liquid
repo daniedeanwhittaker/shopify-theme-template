@@ -1,0 +1,75 @@
+<div class="container">
+  <!-- collection.liquid -->
+  <h1>{{ collection.title }}</h1>
+  <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+    {% for product in collection.products %}
+      <div style="border: 1px solid #eee; padding: 16px; text-align: center;">
+        <a href="{{ product.url }}">
+          <img
+            src="{{ product.featured_image | img_url: 'medium' }}"
+            alt="{{ product.title }}"
+            style="max-width: 100%; height: auto;"
+          >
+          <h2 style="font-size: 1.1em; margin: 12px 0 8px;">{{ product.title }}</h2>
+          <p>{{ product.price | money }}</p>
+        </a>
+        <form method="post" action="/cart/add">
+          <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+          <button type="submit" style="margin-top: 8px;">Add to Cart</button>
+        </form>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Main Collection",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_collection_image",
+      "label": "Show collection image",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_collection_description",
+      "label": "Show collection description",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "products_per_row",
+      "label": "Products per row",
+      "default": "4",
+      "options": [
+        { "value": "2", "label": "2" },
+        { "value": "3", "label": "3" },
+        { "value": "4", "label": "4" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "products_limit",
+      "label": "Max products to show",
+      "min": 4,
+      "max": 50,
+      "step": 1,
+      "default": 12
+    }
+  ],
+  "presets": [
+    {
+      "name": "Main Collection",
+      "category": "Collection pages",
+      "settings": {
+        "show_collection_image": true,
+        "show_collection_description": true,
+        "products_per_row": "4",
+        "products_limit": 12
+      }
+    }
+  ]
+}
+{% endschema %}

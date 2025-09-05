@@ -1,6 +1,6 @@
-@use "variables/_global" as global;
+@use "../_variables" as global;
 
-table{
+table {
     caption-side: bottom;
     border-collapse: collapse;
     width: 100%;
@@ -8,35 +8,44 @@ table{
     vertical-align: top;
     border-color: global.$color-grey-400;
 
-    tbody, td, tfoot, th, thead, tr {
+    tbody,
+    td,
+    tfoot,
+    th,
+    thead,
+    tr {
         border-color: inherit;
         border-style: solid;
     }
 
-    &  > thead {
+    &>thead {
         vertical-align: bottom;
     }
-    & > :not(caption) > * {
-        border-width:1px 0;
 
-        & > * {
+    &> :not(caption)>* {
+        border-width: 1px 0;
+
+        &>* {
             border-width: 0 1px;
             padding: .5rem .5rem;
             background-color: #fff;
-        }        
+        }
     }
 
-    tbody{
+    tbody {
         vertical-align: inherit;
     }
+
     tr {
         display: table-row;
         vertical-align: inherit;
         unicode-bidi: isolate;
     }
-    th{
+
+    th {
         text-align: -webkit-match-parent;
     }
+
     td {
         display: table-cell;
         vertical-align: inherit;

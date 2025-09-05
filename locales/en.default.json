@@ -1,0 +1,12 @@
+{
+    "cart": {
+        "page_title": "Your Shopping Basket",
+        "empty": "Your basket is currently empty.",
+        "proceed": "Proceed to Checkout",
+        "product": "Product",
+        "title": "Title",
+        "qty": "Qty",
+        "price": "Price",
+        "line_total": "Line Total"
+    }
+}

@@ -1,15 +1,15 @@
 // _container.scss
-@use "variables/_layout" as layout;
+@use "../_variables" as variables;
 @use 'sass:map';
 
 
 $breakpoints: (
-  xs: layout.$container-xs,
-  sm: layout.$container-sm,
-  md: layout.$container-md,
-  lg: layout.$container-lg,
-  xl: layout.$container-xl,
-  xxl: layout.$container-xxl
+  xs: variables.$container-xs,
+  sm: variables.$container-sm,
+  md: variables.$container-md,
+  lg: variables.$container-lg,
+  xl: variables.$container-xl,
+  xxl: variables.$container-xxl
 );
 
 $container-widths: (

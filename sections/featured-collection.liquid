@@ -2,7 +2,7 @@
 {% if collection %}
   <section class="featured-collection-section">
     <h2 class="featured-collection-title">
-      {{ collection.title }}
+      {{ section.settings.feature_title | default: collection.title }}
     </h2>
     <div class="featured-collection-products">
       {% for product in collection.products limit: section.settings.products_limit %}
@@ -78,6 +78,11 @@
       "label": "Collection"
     },
     {
+      "type": "text",
+      "id": "feature_title",
+      "label": "Featured Title"
+    },
+    {
       "type": "range",
       "id": "products_limit",
       "label": "Number of products to show",
@@ -89,7 +94,8 @@
   ],
   "presets": [
     {
-      "name": "Featured Collection"
+      "name": "Featured Collection",
+      "category": "collection"
     }
   ]
 }

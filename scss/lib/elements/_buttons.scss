@@ -1,5 +1,5 @@
-// _buttons.scss
-@use "../variables/_global" as global;
+// _footer.scss
+@use "../_variables" as variables;
 @use 'sass:color';
 
 // Variables
@@ -10,27 +10,35 @@ $btn-border-radius: 4px;
 $btn-transition: all 0.2s ease-in-out;
 
 $btn-colors: (
-  primary: global.$color-primary,
-  secondary: global.$color-secondary,
-  success: global.$color-success,
-  danger: global.$color-danger,
-  warning: global.$color-warning, 
-  light: global.$color-light, 
-  dark: global.$color-dark, 
+  primary: variables.$color-primary,
+  secondary: variables.$color-secondary,
+  success: variables.$color-success,
+  danger: variables.$color-danger,
+  warning: variables.$color-warning,
+  light: variables.$color-light,
+  dark: variables.$color-dark,
 );
 
 // Base Button
 .btn {
   display: inline-block;
-  font-size: $btn-font-size;
-  padding: $btn-padding-y $btn-padding-x;
-  border: none;
-  border-radius: $btn-border-radius;
-  cursor: pointer;
   text-align: center;
   text-decoration: none;
-  transition: $btn-transition;
-  line-height: 1.5;
+  background-color: variables.$button_background-color;
+  border-style: variables.$button_border-style;
+  border-color: variables.$button_border-color;
+  border-width: variables.$button_border-width;
+  border-radius: variables.$button_border-radius;
+  color: variables.$button_color;
+  cursor: pointer;
+  font-family: variables.$button_font-family;
+  font-size: variables.$button_font-size;
+  font-weight: variables.$button_font-weight;
+  color: color.adjust(variables.$button_color, $lightness: -10%);
+  line-height: 20px;
+  margin: variables.$button_margin;
+  padding: variables.$button_padding;
+  transition: variables.$button_transition;
 
   &:disabled {
     opacity: 0.6;
@@ -42,16 +50,14 @@ $btn-colors: (
 @each $name, $color in $btn-colors {
   .btn-#{$name} {
     background-color: $color;
-    color: if(color.channel($color, "lightness", $space: hsl) > 50%, #000, #fff);
-    
-
+    color: if(color.channel($color, "lightness", $space: hsl) > 90%, #000, #fff);
 
     &:hover:not(:disabled) {
-      background: color.adjust(global.$color-primary, $lightness: -20%);
+      background: color.adjust(variables.$color-primary, $lightness: -20%);
     }
 
     &:focus {
-      outline: 2px solid if(color.channel($color, "lightness", $space: hsl) > 50%, #000, #fff);
+      outline: 2px solid if(color.channel($color, "lightness", $space: hsl) > 90%, #000, #fff);
       outline-offset: 2px;
     }
   }
@@ -66,12 +72,11 @@ $btn-colors: (
 
     &:hover:not(:disabled) {
       background-color: $color;
-
-      color: if(color.channel($color, "lightness", $space: hsl) > 50%, #000, #fff);
+      color: if(color.channel($color, "lightness", $space: hsl) > 90%, #000, #fff);
     }
 
     &:focus {
-      outline: 2px solid color.adjust(global.$color-primary, $lightness: -20%);
+      outline: 2px solid color.adjust(variables.$color-primary, $lightness: -20%);
       outline-offset: 2px;
     }
   }
