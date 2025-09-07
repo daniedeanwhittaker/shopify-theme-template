@@ -1,6 +1,7 @@
 // _footer.scss
 @use "../_variables" as variables;
 @use 'sass:color';
+@use "sass:map" as map;
 
 // Variables
 $btn-font-size: 1rem;
@@ -9,14 +10,43 @@ $btn-padding-x: 1em;
 $btn-border-radius: 4px;
 $btn-transition: all 0.2s ease-in-out;
 
-$btn-colors: (
-  primary: variables.$color-primary,
-  secondary: variables.$color-secondary,
-  success: variables.$color-success,
-  danger: variables.$color-danger,
-  warning: variables.$color-warning,
-  light: variables.$color-light,
-  dark: variables.$color-dark,
+
+$button-variants: (
+  primary: (
+    background-color: variables.$primary_button_background-color,
+    color: variables.$primary_button_color,
+    border-color: variables.$primary_button_border-color 
+    ),
+  secondary: (
+    background-color: variables.$secondary_button_background-color,
+    color: variables.$secondary_button_color,
+    border-color: variables.$secondary_button_border-color 
+    ),
+  light: (
+    background-color: variables.$light_button_background-color,
+    color: variables.$light_button_color,
+    border-color: variables.$light_button_border-color 
+    ),
+  dark: (
+    background-color: variables.$dark_button_background-color,
+    color: variables.$dark_button_color,
+    border-color: variables.$dark_button_border-color 
+    ),
+  success: (
+    background-color: variables.$success_button_background-color,
+    color: variables.$success_button_color,
+    border-color: variables.$success_button_border-color 
+    ),
+  warning: (
+    background-color: variables.$warning_button_background-color,
+    color: variables.$warning_button_color,
+    border-color: variables.$warning_button_border-color 
+    ),
+  danger: (
+    background-color: variables.$danger_button_background-color,
+    color: variables.$danger_button_color,
+    border-color: variables.$danger_button_border-color 
+    )
 );
 
 // Base Button
@@ -46,37 +76,48 @@ $btn-colors: (
   }
 }
 
-// Variants
-@each $name, $color in $btn-colors {
+@each $name, $props in $button-variants {
   .btn-#{$name} {
-    background-color: $color;
-    color: if(color.channel($color, "lightness", $space: hsl) > 90%, #000, #fff);
+      background-color: map.get($props, background-color);
+      color: map.get($props, color);
+      border-color: map.get($props, border-color);
 
     &:hover:not(:disabled) {
-      background: color.adjust(variables.$color-primary, $lightness: -20%);
+      background-color: color.adjust(map.get($props, background-color), $lightness: -15%);
+      color: color.adjust(map.get($props, color), $lightness: -15%);
     }
-
+    &:disabled{
+       opacity: 0.5;
+    }
     &:focus {
-      outline: 2px solid if(color.channel($color, "lightness", $space: hsl) > 90%, #000, #fff);
+      outline: 2px solid color.adjust(map.get($props, background-color), $lightness: -15%);
       outline-offset: 2px;
     }
   }
 }
 
+
+
 // Outline Variants
-@each $name, $color in $btn-colors {
+@each $name, $props in $button-variants {
   .btn-outline-#{$name} {
+    
+    $_border_hover-color: color.adjust(map.get($props, border-color), $lightness: -15%);
+
     background-color: transparent;
-    border: 2px solid $color;
-    color: $color;
+    border: 2px solid map.get($props, border-color);
+    color: map.get($props, border-color);
 
     &:hover:not(:disabled) {
-      background-color: $color;
-      color: if(color.channel($color, "lightness", $space: hsl) > 90%, #000, #fff);
+      border-color: $_border_hover-color;
+      color: $_border_hover-color;
     }
 
+    &:disabled{
+       opacity: 0.5;
+    }
     &:focus {
-      outline: 2px solid color.adjust(variables.$color-primary, $lightness: -20%);
+      outline: 2px solid $_border_hover-color;
       outline-offset: 2px;
     }
   }

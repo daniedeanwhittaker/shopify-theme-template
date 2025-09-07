@@ -1,4 +1,4 @@
-@use 'sass:color';
+@use "sass:color";
 
 //*******************************
 //*************** Colours
@@ -120,6 +120,23 @@ $form_color: $color-body;
 $form_focus_color: $form_color;
 $form_line-height: 1.5;
 
+//Label
+$label_font-size: 1rem;
+$label_font-weight: 500;
+$label_display: block;
+$label_color: $color-grey-600;
+$label_required_color: $color-danger;
+$label_margin: 0 0 0.5rem 0;
+$label_cursor: pointer;
+$label_transition: color .15s ease-in-out;
+$label_width:100%;
+$label_max-width: 500px;
+   
+//Placeholder
+$placeholder_color: $color-grey-500;
+$placeholder_transition: color .15s ease-in-out;
+
+
 //Input
 $input_background-color: #fff;
 $input_border-style: $form_border-style;
@@ -134,7 +151,8 @@ $input_font-weight: $form_font-weight;
 $input_line-height: $form_line-height;
 $input_margin: $form_margin;
 $input_padding: $form_padding;
-$input_placeholder-color: $color-grey-700;
+$input_width:100%;
+$input_max-width: 500px;
 
 
 //Textarea
@@ -153,8 +171,9 @@ $textarea_line-height: $form_line-height;
 $textarea_margin: $form_margin;
 $textarea_min-height: 120px;
 $textarea_padding: $form_padding;
-$textarea_placeholder-color: $color-grey-700;
 $textarea_resize: vertical;
+$textarea_width:100%;
+$textarea_max-width: 100%;
 
 //Select
 $select_arrow-color: $form_focus-color;
@@ -171,7 +190,8 @@ $select_font-weight: $form_font-weight;
 $select_line-height: $form_line-height;
 $select_margin: $textarea_margin;
 $select_padding: $form_padding;
-$select_placeholder-color: $color-grey-700;
+$select_width:100%;
+$select_max-width: 500px;
 
 //*******************************
 //*************** Button
@@ -185,7 +205,7 @@ $button_border-style: $form_border-style;
 $button_border-color: $form_border-color;
 $button_border-width: $form_border-width;
 $button_border-radius: $form_border-radius;
-$button_color: #fff;
+$button_color: $color-body;
 $button_cursor: pointer;
 $button_font-family: $form_font-family;
 $button_font-size: $form_font-size;
