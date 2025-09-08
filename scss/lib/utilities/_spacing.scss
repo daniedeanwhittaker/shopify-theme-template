@@ -2,23 +2,55 @@
 @for $i from 1 through 20 {
   $value: $i * 5;
 
-  .pt-#{$value} { padding: $value+'px'; }
-  .pb-#{$value} { padding-bottom: $value+'px'; }
-  .pl-#{$value} { padding-left: $value+'px'; }
-  .pr-#{$value} { padding-right: $value+'px'; }
-  .px-#{$value} { padding-left: $value+'px'; padding-right: $value+'px'; } 
-  .py-#{$value} { padding-top: $value+'px'; padding-bottom: $value+'px'; }
-  .p-#{$value} { padding: $value+'px'; }
+  .pt-#{$value} { 
+    padding: #{$value}+'px'; 
+  }
+  .pb-#{$value} { 
+    padding-bottom: #{$value}+'px'; 
+  }
+  .pl-#{$value} { 
+    padding-left: #{$value}+'px'; 
+  }
+  .pr-#{$value} { 
+    padding-right: #{$value}+'px'; 
+  }
+  .px-#{$value} { 
+    padding-left: #{$value}+'px'; 
+    padding-right: #{$value}+'px'; 
+  } 
+  .py-#{$value} { 
+    padding-top: #{$value}+'px'; 
+    padding-bottom: #{$value}+'px'; 
+  }
+  .p-#{$value} { 
+    padding: #{$value}+'px'; 
+  }
 }
 
 //Margin
 @for $i from 1 through 20 {
   $value: $i * 5;   
-  .mt-#{$value} { margin-top: $value+'px'; }
-  .mb-#{$value} { margin-bottom: $value+'px'; }
-  .ml-#{$value} { margin-left: $value+'px'; }
-  .mr-#{$value} { margin-right: $value+'px'; }
-  .mx-#{$value} { margin-left: $value+'px'; margin-right: $value+'px'; }
-  .my-#{$value} { margin-top: $value+'px'; margin-bottom: $value+'px'; }
-  .m-#{$value} { padding: $value+'px'; }
+  .mt-#{$value} { 
+    margin-top: #{$value}+'px'; 
+  }
+  .mb-#{$value} { 
+    margin-bottom: #{$value}+'px'; 
+  }
+  .ml-#{$value} { 
+    margin-left: #{$value}+'px'; 
+  }
+  .mr-#{$value} { 
+    margin-right: #{$value}+'px'; 
+  }
+  .mx-#{$value} { 
+    margin-left: #{$value}+'px'; 
+    margin-right: #{$value}+'px'; 
+  }
+  .my-#{$value} { 
+    margin-top: #{$value}+'px'; 
+    margin-bottom: #{$value}+'px'; 
+  }
+  .m-#{$value} { 
+    padding: #{$value}+'px'; 
+  }
 }

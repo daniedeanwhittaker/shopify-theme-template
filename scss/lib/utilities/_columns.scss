@@ -1,5 +1,12 @@
 @use "../_variables" as variables;
 
+.row{
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0;
+  margin-right: 1.5rem;
+  margin-left: 1.5rem;
+}
 @for $i from 1 through variables.$grid {
   .col-#{$i} {
     flex: 0 0 auto;

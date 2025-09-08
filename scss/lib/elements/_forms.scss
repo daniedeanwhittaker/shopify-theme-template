@@ -13,248 +13,199 @@ form {
         padding: 2rem;
         color: variables.$form_color;
     }
+}
 
-    // Labels
-    & > label {
-        color: variables.$label_color;
-        cursor: variables.$label_cursor;    
-        display: variables.$label_display;
-        font-size: variables.$label_font-size;
-        font-weight: variables.$label_font-weight;
-        margin: variables.$label_margin;
-        transition: variables.$label_transition;
-        width: variables.$label_width;
-        max-width: variables.$label_max-width;
+// Labels
+label {
+    color: variables.$label_color;
+    cursor: variables.$label_cursor;    
+    display: variables.$label_display;
+    font-size: variables.$label_font-size;
+    font-weight: variables.$label_font-weight;
+    margin: variables.$label_margin;
+    transition: variables.$label_transition;
+    width: variables.$label_width;
+    max-width: variables.$label_max-width;
 
-        &.required {
-            color: variables.$label_required_color;
-        }
+    &.required {
+        color: variables.$label_required_color;
     }
+}
+//Checkbox Label
+.check-label {
+    color: variables.$label_color;
+    display: flex;
+    align-items: center;
+    font-size: variables.$label_font-size;
+    gap: 0.5rem;
+}
+// Inputs, Textareas, Selects
+input {
+    @include mixings.radius(variables.$input_border-radius);
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: variables.$input_background-color;
+    border-width: variables.$input_border-width;
+    border-style: variables.$input_border-style;
+    border-color: variables.$input_border-color;
+    color: variables.$input_color;
+    font-family: variables.$input_font-family;
+    font-size: variables.$input_font-size;
+    font-weight: variables.$input_line-height;
+    line-height: variables.$input_line-height;
+    margin: variables.$input_margin;
+    padding: variables.$input_padding;
+    transition: border-color 0.2s ease-in-out;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    width: variables.$input_width;
+    max-width: variables.$input_max-width;
 
-    // Inputs, Textareas, Selects
-    & > input {
-        @include mixings.radius(variables.$input_border-radius);
-        -moz-appearance: none;
-        -webkit-appearance: none;
+    // File input specific
+    &[type="file" i] {
         appearance: none;
-        background-color: variables.$input_background-color;
+        background-color: initial;
+        cursor: default;
+        align-items: baseline;
+        color: inherit;
+        text-overflow: ellipsis;
+        text-align: start !important;
+        padding: initial;
+        border: initial;
+        white-space: pre;
         border-width: variables.$input_border-width;
         border-style: variables.$input_border-style;
         border-color: variables.$input_border-color;
-        color: variables.$input_color;
-        font-family: variables.$input_font-family;
-        font-size: variables.$input_font-size;
-        font-weight: variables.$input_line-height;
-        line-height: variables.$input_line-height;
-        margin: variables.$input_margin;
-        padding: variables.$input_padding;
-        transition: border-color 0.2s ease-in-out;
-        transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-        width: variables.$input_width;
-        max-width: variables.$input_max-width;
 
-        // File input specific
-        &[type="file" i] {
-            appearance: none;
-            background-color: initial;
-            cursor: default;
-            align-items: baseline;
-            color: inherit;
-            text-overflow: ellipsis;
-            text-align: start !important;
-            padding: initial;
-            border: initial;
-            white-space: pre;
-            border-width: variables.$input_border-width;
-            border-style: variables.$input_border-style;
-            border-color: variables.$input_border-color;
-
-            &::file-selector-button {
-                background-color: variables.$color-grey-200;
-                color: variables.$color-body;
-                padding: 0.3rem 1.2rem;
-                border: none;
-                cursor: pointer;
-                font-size: 1rem;
-                margin-right: 10px;
-                transition: background-color 0.2s ease-in-out;
-
-                &:hover {
-                    background-color: variables.$color-grey-800;
-                }
-            }
-        }
-      
-
-        // Checkbox & Radio
-        &[type="checkbox"],
-        &[type="radio"] {
-            margin-right: 0.5rem;
-            accent-color: variables.$form_focus_color;
-        }
-        &::placeholder {
-            color: variables.$color-grey-500;
-            transition: variables.$placeholder_transition;
-        }
-
-        &:focus {
-            border-color: variables.$input_focus-color;
-            outline: none;
-        }
-    }
-
-    & > select {
-        -moz-appearance: none;
-        -webkit-appearance: none;
-        appearance: none;
-        @include mixings.radius(variables.$select_border-radius);
-        -moz-appearance: none;
-        -webkit-appearance: none;
-        appearance: none;
-        background-color: variables.$select_background-color;
-        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 10 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23333'/%3E%3C/svg%3E");
-        background-position: right 0.75rem center;
-        background-repeat: no-repeat;
-        background-size: 10px 6px;
-        border-width: variables.$select_border-width;
-        border-width: variables.$select_border-width;
-        border-color: variables.$select_border-color;
-        color: variables.$select_color;
-        font-family: variables.$select_font-family;
-        font-size: variables.$select_font-size;
-        font-weight: variables.$select_font-weight;
-        line-height: variables.$select_line-height;
-        margin: variables.$select_margin;
-        padding: variables.$select_padding;
-        transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-        width: variables.$select_width;
-        max-width: variables.$select_max-width;
-
-        &::placeholder {
-            color: variables.$color-grey-500;
-            transition: variables.$placeholder_transition;
-        }
-
-        &:focus {
-            border-color: variables.$select_focus-color;
-            outline: none;
-        }
-    }
-
-    // Textarea specific
-    & > textarea {
-        @include mixings.radius(variables.$textarea_border-radius);
-        -moz-appearance: none;
-        -webkit-appearance: none;
-        appearance: none;
-        background-color: variables.$textarea_background-color;
-        border-width: variables.$textarea_border-width;
-        border-width: variables.$textarea_border-width;
-        border-color: variables.$textarea_border-color;
-        color: variables.$textarea_color;
-        font-family: variables.$textarea_font-family;
-        font-size: variables.$textarea_font-size;
-        font-weight: variables.$textarea_font-weight;
-        line-height: variables.$textarea_line-height;
-        margin: variables.$textarea_margin;
-        min-height: variables.$textarea_min-height;
-        padding: variables.$textarea_padding;
-        resize: vertical;
-        transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-        width: variables.$textarea_width;
-        max-width: variables.$textarea_max-width;
-
-        &::placeholder {
-            color: variables.$color-grey-500;
-            transition: variables.$placeholder_transition;
-        }
-    }
-
-  
-
-    // File input
-    input[type="file"]::file-selector-button:hover {
-        background-color: variables.$color-grey-800;
-    }
-
-    &::-webkit-file-upload-button {
-        padding: 0.375rem 0.75rem;
-        margin: -0.375rem -0.75rem;
-        -webkit-margin-end: 0.75rem;
-        margin-inline-end: 0.75rem;
-        color: variables.$light_button_color;
-        background-color: variables.$color-grey-800;
-        pointer-events: none;
-        border-color: inherit;
-        border-style: solid;
-        border-width: 0;
-        border-inline-end-width: variables.$light_button_border-width;
-        border-radius: 0;
-        -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    }
-
-    &::file-selector-button {
-        padding: 0.375rem 0.75rem;
-        margin: -0.375rem -0.75rem;
-        -webkit-margin-end: 0.75rem;
-        margin-inline-end: 0.75rem;
-        color: variables.$light_button_color;
-        background-color: variables.$color-grey-800;
-        pointer-events: none;
-        border-color: inherit;
-        border-style: solid;
-        border-width: 0;
-        border-inline-end-width: variables.$light_button_border-width;
-        border-radius: 0;
-        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    }
-
-    & > .check-label {
-        color: variables.$label_color;
-        display: flex;
-        align-items: center;
-        font-size: variables.$label_font-size;
-        gap: 0.5rem;
-    }
-
-    // buttons
-    & > button {
-        @include mixings.radius(variables.$button_border-radius);
-        transition: border-color 0.2s ease-in-out;
-        border-width: variables.$button_border-width;
-        border-width: variables.$button_border-width;
-        border-color: variables.$button_border-color;
-        color: variables.$button_color;
-        font-size: variables.$button_font-size;
-        font-family: variables.$button_font-family;
-        font-weight: variables.$button_font-weight;
-        padding: variables.$button_padding;
-        margin: variables.$button_margin;
-        background-color: variables.$button_background-color;
-        line-height: variables.$button_line-height;
-
-        &:hover {
-            background-color: color.adjust(variables.$form_focus_color, $lightness: -10%);
-        }
-    }
-
-    //Submit buttons
-    & > button[type="submit"],
-    & > input[type="submit"]{
-            background-color: variables.$color-primary;
-            color: #fff;
-            padding: 0.5rem 1.5rem;
+        &::-webkit-file-upload-button,
+        &::file-selector-button {
+            background-color: variables.$color-grey-200;
+            color: variables.$color-body;
+            padding: 0.3rem 1.2rem;
             border: none;
             cursor: pointer;
             font-size: 1rem;
+            margin-right: 10px;
+            transition: background-color 0.2s ease-in-out;
+
+            &:hover {
+                color:color.adjust(variables.$primary_button_color, $lightness: -10%);
+                background-color: color.adjust(variables.$primary_button_background-color, $lightness: -10%);
+                    
+            }
+        }
+    }
+    
+
+    // Checkbox & Radio
+    &[type="checkbox"],
+    &[type="radio"] {
+        margin-right: 0.5rem;
+        accent-color: #212529;
+        width: 20px;
+        height: 20px;
+        max-width: 20px;
+        padding: 0;
+        display: inline-block;
+        margin: 0;
+        cursor: pointer;
+
+        &:checked {
+            background-color: variables.$color-primary;
+            border-color: variables.$color-primary;
+
+            &[type="checkbox"]{
+                background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e");
+            }
+            &[type="radio"]{
+                background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23fff'/%3e%3c/svg%3e");
+            }
+        }
+    }
+    &[type="radio"] {
+        @include mixings.radius(50%);
+    }
+    &::placeholder {
+        color: variables.$color-grey-500;
+        transition: variables.$placeholder_transition;
+    }
+
+    &:focus {
+        border-color: variables.$input_focus-color;
+        outline: none;
+    }
+}
+
+// Textarea specific
+textarea {
+    @include mixings.radius(variables.$textarea_border-radius);
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: variables.$textarea_background-color;
+    border-width: variables.$textarea_border-width;
+    border-width: variables.$textarea_border-width;
+    border-color: variables.$textarea_border-color;
+    color: variables.$textarea_color;
+    font-family: variables.$textarea_font-family;
+    font-size: variables.$textarea_font-size;
+    font-weight: variables.$textarea_font-weight;
+    line-height: variables.$textarea_line-height;
+    margin: variables.$textarea_margin;
+    min-height: variables.$textarea_min-height;
+    padding: variables.$textarea_padding;
+    resize: vertical;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    width: variables.$textarea_width;
+    max-width: variables.$textarea_max-width;
+
+    &::placeholder {
+        color: variables.$color-grey-500;
+        transition: variables.$placeholder_transition;
+    }
+}
+
+// buttons
+button {
+    @include mixings.radius(variables.$button_border-radius);
+    transition: border-color 0.2s ease-in-out;
+    border-width: variables.$button_border-width;
+    border-width: variables.$button_border-width;
+    border-color: variables.$button_border-color;
+    color: variables.$button_color;
+    font-size: variables.$button_font-size;
+    font-family: variables.$button_font-family;
+    font-weight: variables.$button_font-weight;
+    padding: variables.$button_padding;
+    margin: variables.$button_margin;
+    background-color: variables.$button_background-color;
+    line-height: variables.$button_line-height;
+
+    &:hover {
+        background-color: color.adjust(variables.$form_focus_color, $lightness: -10%);
+    }
+}
+    //Submit buttons
+    button[type="submit"],
+    input[type="submit"]{
+            background-color: variables.$color-primary;
+            color: #fff;
+            border: none;
+            cursor: pointer;
             margin-top: 1rem;
             transition: background-color 0.2s ease-in-out;
 
             &:hover {
-                background-color: color.adjust(variables.$color-primary, $lightness: -10%);
+                color:color.adjust(variables.$primary_button_color, $lightness: -10%);
+                background-color: color.adjust(variables.$primary_button_background-color, $lightness: -10%);
             }
     }
+
+[type=button], 
+[type=reset], 
+[type=submit], 
+button {
+    -webkit-appearance: button;
 }
 
 ::-webkit-file-upload-button {
@@ -265,4 +216,10 @@ form {
 ::file-selector-button {
   font: inherit;
   -webkit-appearance: button;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
 }

@@ -99,7 +99,7 @@ a:hover {
 hr {
   margin: 1rem 0;
   border: 0;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #495057;
 }
 
 blockquote {
@@ -381,1203 +381,1211 @@ li {
 }
 
 .pt-5 {
-  padding: "5px";
+  padding: 5px;
 }
 
 .pb-5 {
-  padding-bottom: "5px";
+  padding-bottom: 5px;
 }
 
 .pl-5 {
-  padding-left: "5px";
+  padding-left: 5px;
 }
 
 .pr-5 {
-  padding-right: "5px";
+  padding-right: 5px;
 }
 
 .px-5 {
-  padding-left: "5px";
-  padding-right: "5px";
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .py-5 {
-  padding-top: "5px";
-  padding-bottom: "5px";
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .p-5 {
-  padding: "5px";
+  padding: 5px;
 }
 
 .pt-10 {
-  padding: "10px";
+  padding: 10px;
 }
 
 .pb-10 {
-  padding-bottom: "10px";
+  padding-bottom: 10px;
 }
 
 .pl-10 {
-  padding-left: "10px";
+  padding-left: 10px;
 }
 
 .pr-10 {
-  padding-right: "10px";
+  padding-right: 10px;
 }
 
 .px-10 {
-  padding-left: "10px";
-  padding-right: "10px";
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .py-10 {
-  padding-top: "10px";
-  padding-bottom: "10px";
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .p-10 {
-  padding: "10px";
+  padding: 10px;
 }
 
 .pt-15 {
-  padding: "15px";
+  padding: 15px;
 }
 
 .pb-15 {
-  padding-bottom: "15px";
+  padding-bottom: 15px;
 }
 
 .pl-15 {
-  padding-left: "15px";
+  padding-left: 15px;
 }
 
 .pr-15 {
-  padding-right: "15px";
+  padding-right: 15px;
 }
 
 .px-15 {
-  padding-left: "15px";
-  padding-right: "15px";
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .py-15 {
-  padding-top: "15px";
-  padding-bottom: "15px";
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 .p-15 {
-  padding: "15px";
+  padding: 15px;
 }
 
 .pt-20 {
-  padding: "20px";
+  padding: 20px;
 }
 
 .pb-20 {
-  padding-bottom: "20px";
+  padding-bottom: 20px;
 }
 
 .pl-20 {
-  padding-left: "20px";
+  padding-left: 20px;
 }
 
 .pr-20 {
-  padding-right: "20px";
+  padding-right: 20px;
 }
 
 .px-20 {
-  padding-left: "20px";
-  padding-right: "20px";
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .py-20 {
-  padding-top: "20px";
-  padding-bottom: "20px";
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .p-20 {
-  padding: "20px";
+  padding: 20px;
 }
 
 .pt-25 {
-  padding: "25px";
+  padding: 25px;
 }
 
 .pb-25 {
-  padding-bottom: "25px";
+  padding-bottom: 25px;
 }
 
 .pl-25 {
-  padding-left: "25px";
+  padding-left: 25px;
 }
 
 .pr-25 {
-  padding-right: "25px";
+  padding-right: 25px;
 }
 
 .px-25 {
-  padding-left: "25px";
-  padding-right: "25px";
+  padding-left: 25px;
+  padding-right: 25px;
 }
 
 .py-25 {
-  padding-top: "25px";
-  padding-bottom: "25px";
+  padding-top: 25px;
+  padding-bottom: 25px;
 }
 
 .p-25 {
-  padding: "25px";
+  padding: 25px;
 }
 
 .pt-30 {
-  padding: "30px";
+  padding: 30px;
 }
 
 .pb-30 {
-  padding-bottom: "30px";
+  padding-bottom: 30px;
 }
 
 .pl-30 {
-  padding-left: "30px";
+  padding-left: 30px;
 }
 
 .pr-30 {
-  padding-right: "30px";
+  padding-right: 30px;
 }
 
 .px-30 {
-  padding-left: "30px";
-  padding-right: "30px";
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 .py-30 {
-  padding-top: "30px";
-  padding-bottom: "30px";
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 .p-30 {
-  padding: "30px";
+  padding: 30px;
 }
 
 .pt-35 {
-  padding: "35px";
+  padding: 35px;
 }
 
 .pb-35 {
-  padding-bottom: "35px";
+  padding-bottom: 35px;
 }
 
 .pl-35 {
-  padding-left: "35px";
+  padding-left: 35px;
 }
 
 .pr-35 {
-  padding-right: "35px";
+  padding-right: 35px;
 }
 
 .px-35 {
-  padding-left: "35px";
-  padding-right: "35px";
+  padding-left: 35px;
+  padding-right: 35px;
 }
 
 .py-35 {
-  padding-top: "35px";
-  padding-bottom: "35px";
+  padding-top: 35px;
+  padding-bottom: 35px;
 }
 
 .p-35 {
-  padding: "35px";
+  padding: 35px;
 }
 
 .pt-40 {
-  padding: "40px";
+  padding: 40px;
 }
 
 .pb-40 {
-  padding-bottom: "40px";
+  padding-bottom: 40px;
 }
 
 .pl-40 {
-  padding-left: "40px";
+  padding-left: 40px;
 }
 
 .pr-40 {
-  padding-right: "40px";
+  padding-right: 40px;
 }
 
 .px-40 {
-  padding-left: "40px";
-  padding-right: "40px";
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 .py-40 {
-  padding-top: "40px";
-  padding-bottom: "40px";
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 .p-40 {
-  padding: "40px";
+  padding: 40px;
 }
 
 .pt-45 {
-  padding: "45px";
+  padding: 45px;
 }
 
 .pb-45 {
-  padding-bottom: "45px";
+  padding-bottom: 45px;
 }
 
 .pl-45 {
-  padding-left: "45px";
+  padding-left: 45px;
 }
 
 .pr-45 {
-  padding-right: "45px";
+  padding-right: 45px;
 }
 
 .px-45 {
-  padding-left: "45px";
-  padding-right: "45px";
+  padding-left: 45px;
+  padding-right: 45px;
 }
 
 .py-45 {
-  padding-top: "45px";
-  padding-bottom: "45px";
+  padding-top: 45px;
+  padding-bottom: 45px;
 }
 
 .p-45 {
-  padding: "45px";
+  padding: 45px;
 }
 
 .pt-50 {
-  padding: "50px";
+  padding: 50px;
 }
 
 .pb-50 {
-  padding-bottom: "50px";
+  padding-bottom: 50px;
 }
 
 .pl-50 {
-  padding-left: "50px";
+  padding-left: 50px;
 }
 
 .pr-50 {
-  padding-right: "50px";
+  padding-right: 50px;
 }
 
 .px-50 {
-  padding-left: "50px";
-  padding-right: "50px";
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
 .py-50 {
-  padding-top: "50px";
-  padding-bottom: "50px";
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 .p-50 {
-  padding: "50px";
+  padding: 50px;
 }
 
 .pt-55 {
-  padding: "55px";
+  padding: 55px;
 }
 
 .pb-55 {
-  padding-bottom: "55px";
+  padding-bottom: 55px;
 }
 
 .pl-55 {
-  padding-left: "55px";
+  padding-left: 55px;
 }
 
 .pr-55 {
-  padding-right: "55px";
+  padding-right: 55px;
 }
 
 .px-55 {
-  padding-left: "55px";
-  padding-right: "55px";
+  padding-left: 55px;
+  padding-right: 55px;
 }
 
 .py-55 {
-  padding-top: "55px";
-  padding-bottom: "55px";
+  padding-top: 55px;
+  padding-bottom: 55px;
 }
 
 .p-55 {
-  padding: "55px";
+  padding: 55px;
 }
 
 .pt-60 {
-  padding: "60px";
+  padding: 60px;
 }
 
 .pb-60 {
-  padding-bottom: "60px";
+  padding-bottom: 60px;
 }
 
 .pl-60 {
-  padding-left: "60px";
+  padding-left: 60px;
 }
 
 .pr-60 {
-  padding-right: "60px";
+  padding-right: 60px;
 }
 
 .px-60 {
-  padding-left: "60px";
-  padding-right: "60px";
+  padding-left: 60px;
+  padding-right: 60px;
 }
 
 .py-60 {
-  padding-top: "60px";
-  padding-bottom: "60px";
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
 
 .p-60 {
-  padding: "60px";
+  padding: 60px;
 }
 
 .pt-65 {
-  padding: "65px";
+  padding: 65px;
 }
 
 .pb-65 {
-  padding-bottom: "65px";
+  padding-bottom: 65px;
 }
 
 .pl-65 {
-  padding-left: "65px";
+  padding-left: 65px;
 }
 
 .pr-65 {
-  padding-right: "65px";
+  padding-right: 65px;
 }
 
 .px-65 {
-  padding-left: "65px";
-  padding-right: "65px";
+  padding-left: 65px;
+  padding-right: 65px;
 }
 
 .py-65 {
-  padding-top: "65px";
-  padding-bottom: "65px";
+  padding-top: 65px;
+  padding-bottom: 65px;
 }
 
 .p-65 {
-  padding: "65px";
+  padding: 65px;
 }
 
 .pt-70 {
-  padding: "70px";
+  padding: 70px;
 }
 
 .pb-70 {
-  padding-bottom: "70px";
+  padding-bottom: 70px;
 }
 
 .pl-70 {
-  padding-left: "70px";
+  padding-left: 70px;
 }
 
 .pr-70 {
-  padding-right: "70px";
+  padding-right: 70px;
 }
 
 .px-70 {
-  padding-left: "70px";
-  padding-right: "70px";
+  padding-left: 70px;
+  padding-right: 70px;
 }
 
 .py-70 {
-  padding-top: "70px";
-  padding-bottom: "70px";
+  padding-top: 70px;
+  padding-bottom: 70px;
 }
 
 .p-70 {
-  padding: "70px";
+  padding: 70px;
 }
 
 .pt-75 {
-  padding: "75px";
+  padding: 75px;
 }
 
 .pb-75 {
-  padding-bottom: "75px";
+  padding-bottom: 75px;
 }
 
 .pl-75 {
-  padding-left: "75px";
+  padding-left: 75px;
 }
 
 .pr-75 {
-  padding-right: "75px";
+  padding-right: 75px;
 }
 
 .px-75 {
-  padding-left: "75px";
-  padding-right: "75px";
+  padding-left: 75px;
+  padding-right: 75px;
 }
 
 .py-75 {
-  padding-top: "75px";
-  padding-bottom: "75px";
+  padding-top: 75px;
+  padding-bottom: 75px;
 }
 
 .p-75 {
-  padding: "75px";
+  padding: 75px;
 }
 
 .pt-80 {
-  padding: "80px";
+  padding: 80px;
 }
 
 .pb-80 {
-  padding-bottom: "80px";
+  padding-bottom: 80px;
 }
 
 .pl-80 {
-  padding-left: "80px";
+  padding-left: 80px;
 }
 
 .pr-80 {
-  padding-right: "80px";
+  padding-right: 80px;
 }
 
 .px-80 {
-  padding-left: "80px";
-  padding-right: "80px";
+  padding-left: 80px;
+  padding-right: 80px;
 }
 
 .py-80 {
-  padding-top: "80px";
-  padding-bottom: "80px";
+  padding-top: 80px;
+  padding-bottom: 80px;
 }
 
 .p-80 {
-  padding: "80px";
+  padding: 80px;
 }
 
 .pt-85 {
-  padding: "85px";
+  padding: 85px;
 }
 
 .pb-85 {
-  padding-bottom: "85px";
+  padding-bottom: 85px;
 }
 
 .pl-85 {
-  padding-left: "85px";
+  padding-left: 85px;
 }
 
 .pr-85 {
-  padding-right: "85px";
+  padding-right: 85px;
 }
 
 .px-85 {
-  padding-left: "85px";
-  padding-right: "85px";
+  padding-left: 85px;
+  padding-right: 85px;
 }
 
 .py-85 {
-  padding-top: "85px";
-  padding-bottom: "85px";
+  padding-top: 85px;
+  padding-bottom: 85px;
 }
 
 .p-85 {
-  padding: "85px";
+  padding: 85px;
 }
 
 .pt-90 {
-  padding: "90px";
+  padding: 90px;
 }
 
 .pb-90 {
-  padding-bottom: "90px";
+  padding-bottom: 90px;
 }
 
 .pl-90 {
-  padding-left: "90px";
+  padding-left: 90px;
 }
 
 .pr-90 {
-  padding-right: "90px";
+  padding-right: 90px;
 }
 
 .px-90 {
-  padding-left: "90px";
-  padding-right: "90px";
+  padding-left: 90px;
+  padding-right: 90px;
 }
 
 .py-90 {
-  padding-top: "90px";
-  padding-bottom: "90px";
+  padding-top: 90px;
+  padding-bottom: 90px;
 }
 
 .p-90 {
-  padding: "90px";
+  padding: 90px;
 }
 
 .pt-95 {
-  padding: "95px";
+  padding: 95px;
 }
 
 .pb-95 {
-  padding-bottom: "95px";
+  padding-bottom: 95px;
 }
 
 .pl-95 {
-  padding-left: "95px";
+  padding-left: 95px;
 }
 
 .pr-95 {
-  padding-right: "95px";
+  padding-right: 95px;
 }
 
 .px-95 {
-  padding-left: "95px";
-  padding-right: "95px";
+  padding-left: 95px;
+  padding-right: 95px;
 }
 
 .py-95 {
-  padding-top: "95px";
-  padding-bottom: "95px";
+  padding-top: 95px;
+  padding-bottom: 95px;
 }
 
 .p-95 {
-  padding: "95px";
+  padding: 95px;
 }
 
 .pt-100 {
-  padding: "100px";
+  padding: 100px;
 }
 
 .pb-100 {
-  padding-bottom: "100px";
+  padding-bottom: 100px;
 }
 
 .pl-100 {
-  padding-left: "100px";
+  padding-left: 100px;
 }
 
 .pr-100 {
-  padding-right: "100px";
+  padding-right: 100px;
 }
 
 .px-100 {
-  padding-left: "100px";
-  padding-right: "100px";
+  padding-left: 100px;
+  padding-right: 100px;
 }
 
 .py-100 {
-  padding-top: "100px";
-  padding-bottom: "100px";
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
 
 .p-100 {
-  padding: "100px";
+  padding: 100px;
 }
 
 .mt-5 {
-  margin-top: "5px";
+  margin-top: 5px;
 }
 
 .mb-5 {
-  margin-bottom: "5px";
+  margin-bottom: 5px;
 }
 
 .ml-5 {
-  margin-left: "5px";
+  margin-left: 5px;
 }
 
 .mr-5 {
-  margin-right: "5px";
+  margin-right: 5px;
 }
 
 .mx-5 {
-  margin-left: "5px";
-  margin-right: "5px";
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .my-5 {
-  margin-top: "5px";
-  margin-bottom: "5px";
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .m-5 {
-  padding: "5px";
+  padding: 5px;
 }
 
 .mt-10 {
-  margin-top: "10px";
+  margin-top: 10px;
 }
 
 .mb-10 {
-  margin-bottom: "10px";
+  margin-bottom: 10px;
 }
 
 .ml-10 {
-  margin-left: "10px";
+  margin-left: 10px;
 }
 
 .mr-10 {
-  margin-right: "10px";
+  margin-right: 10px;
 }
 
 .mx-10 {
-  margin-left: "10px";
-  margin-right: "10px";
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .my-10 {
-  margin-top: "10px";
-  margin-bottom: "10px";
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .m-10 {
-  padding: "10px";
+  padding: 10px;
 }
 
 .mt-15 {
-  margin-top: "15px";
+  margin-top: 15px;
 }
 
 .mb-15 {
-  margin-bottom: "15px";
+  margin-bottom: 15px;
 }
 
 .ml-15 {
-  margin-left: "15px";
+  margin-left: 15px;
 }
 
 .mr-15 {
-  margin-right: "15px";
+  margin-right: 15px;
 }
 
 .mx-15 {
-  margin-left: "15px";
-  margin-right: "15px";
+  margin-left: 15px;
+  margin-right: 15px;
 }
 
 .my-15 {
-  margin-top: "15px";
-  margin-bottom: "15px";
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .m-15 {
-  padding: "15px";
+  padding: 15px;
 }
 
 .mt-20 {
-  margin-top: "20px";
+  margin-top: 20px;
 }
 
 .mb-20 {
-  margin-bottom: "20px";
+  margin-bottom: 20px;
 }
 
 .ml-20 {
-  margin-left: "20px";
+  margin-left: 20px;
 }
 
 .mr-20 {
-  margin-right: "20px";
+  margin-right: 20px;
 }
 
 .mx-20 {
-  margin-left: "20px";
-  margin-right: "20px";
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .my-20 {
-  margin-top: "20px";
-  margin-bottom: "20px";
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .m-20 {
-  padding: "20px";
+  padding: 20px;
 }
 
 .mt-25 {
-  margin-top: "25px";
+  margin-top: 25px;
 }
 
 .mb-25 {
-  margin-bottom: "25px";
+  margin-bottom: 25px;
 }
 
 .ml-25 {
-  margin-left: "25px";
+  margin-left: 25px;
 }
 
 .mr-25 {
-  margin-right: "25px";
+  margin-right: 25px;
 }
 
 .mx-25 {
-  margin-left: "25px";
-  margin-right: "25px";
+  margin-left: 25px;
+  margin-right: 25px;
 }
 
 .my-25 {
-  margin-top: "25px";
-  margin-bottom: "25px";
+  margin-top: 25px;
+  margin-bottom: 25px;
 }
 
 .m-25 {
-  padding: "25px";
+  padding: 25px;
 }
 
 .mt-30 {
-  margin-top: "30px";
+  margin-top: 30px;
 }
 
 .mb-30 {
-  margin-bottom: "30px";
+  margin-bottom: 30px;
 }
 
 .ml-30 {
-  margin-left: "30px";
+  margin-left: 30px;
 }
 
 .mr-30 {
-  margin-right: "30px";
+  margin-right: 30px;
 }
 
 .mx-30 {
-  margin-left: "30px";
-  margin-right: "30px";
+  margin-left: 30px;
+  margin-right: 30px;
 }
 
 .my-30 {
-  margin-top: "30px";
-  margin-bottom: "30px";
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .m-30 {
-  padding: "30px";
+  padding: 30px;
 }
 
 .mt-35 {
-  margin-top: "35px";
+  margin-top: 35px;
 }
 
 .mb-35 {
-  margin-bottom: "35px";
+  margin-bottom: 35px;
 }
 
 .ml-35 {
-  margin-left: "35px";
+  margin-left: 35px;
 }
 
 .mr-35 {
-  margin-right: "35px";
+  margin-right: 35px;
 }
 
 .mx-35 {
-  margin-left: "35px";
-  margin-right: "35px";
+  margin-left: 35px;
+  margin-right: 35px;
 }
 
 .my-35 {
-  margin-top: "35px";
-  margin-bottom: "35px";
+  margin-top: 35px;
+  margin-bottom: 35px;
 }
 
 .m-35 {
-  padding: "35px";
+  padding: 35px;
 }
 
 .mt-40 {
-  margin-top: "40px";
+  margin-top: 40px;
 }
 
 .mb-40 {
-  margin-bottom: "40px";
+  margin-bottom: 40px;
 }
 
 .ml-40 {
-  margin-left: "40px";
+  margin-left: 40px;
 }
 
 .mr-40 {
-  margin-right: "40px";
+  margin-right: 40px;
 }
 
 .mx-40 {
-  margin-left: "40px";
-  margin-right: "40px";
+  margin-left: 40px;
+  margin-right: 40px;
 }
 
 .my-40 {
-  margin-top: "40px";
-  margin-bottom: "40px";
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 .m-40 {
-  padding: "40px";
+  padding: 40px;
 }
 
 .mt-45 {
-  margin-top: "45px";
+  margin-top: 45px;
 }
 
 .mb-45 {
-  margin-bottom: "45px";
+  margin-bottom: 45px;
 }
 
 .ml-45 {
-  margin-left: "45px";
+  margin-left: 45px;
 }
 
 .mr-45 {
-  margin-right: "45px";
+  margin-right: 45px;
 }
 
 .mx-45 {
-  margin-left: "45px";
-  margin-right: "45px";
+  margin-left: 45px;
+  margin-right: 45px;
 }
 
 .my-45 {
-  margin-top: "45px";
-  margin-bottom: "45px";
+  margin-top: 45px;
+  margin-bottom: 45px;
 }
 
 .m-45 {
-  padding: "45px";
+  padding: 45px;
 }
 
 .mt-50 {
-  margin-top: "50px";
+  margin-top: 50px;
 }
 
 .mb-50 {
-  margin-bottom: "50px";
+  margin-bottom: 50px;
 }
 
 .ml-50 {
-  margin-left: "50px";
+  margin-left: 50px;
 }
 
 .mr-50 {
-  margin-right: "50px";
+  margin-right: 50px;
 }
 
 .mx-50 {
-  margin-left: "50px";
-  margin-right: "50px";
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 .my-50 {
-  margin-top: "50px";
-  margin-bottom: "50px";
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .m-50 {
-  padding: "50px";
+  padding: 50px;
 }
 
 .mt-55 {
-  margin-top: "55px";
+  margin-top: 55px;
 }
 
 .mb-55 {
-  margin-bottom: "55px";
+  margin-bottom: 55px;
 }
 
 .ml-55 {
-  margin-left: "55px";
+  margin-left: 55px;
 }
 
 .mr-55 {
-  margin-right: "55px";
+  margin-right: 55px;
 }
 
 .mx-55 {
-  margin-left: "55px";
-  margin-right: "55px";
+  margin-left: 55px;
+  margin-right: 55px;
 }
 
 .my-55 {
-  margin-top: "55px";
-  margin-bottom: "55px";
+  margin-top: 55px;
+  margin-bottom: 55px;
 }
 
 .m-55 {
-  padding: "55px";
+  padding: 55px;
 }
 
 .mt-60 {
-  margin-top: "60px";
+  margin-top: 60px;
 }
 
 .mb-60 {
-  margin-bottom: "60px";
+  margin-bottom: 60px;
 }
 
 .ml-60 {
-  margin-left: "60px";
+  margin-left: 60px;
 }
 
 .mr-60 {
-  margin-right: "60px";
+  margin-right: 60px;
 }
 
 .mx-60 {
-  margin-left: "60px";
-  margin-right: "60px";
+  margin-left: 60px;
+  margin-right: 60px;
 }
 
 .my-60 {
-  margin-top: "60px";
-  margin-bottom: "60px";
+  margin-top: 60px;
+  margin-bottom: 60px;
 }
 
 .m-60 {
-  padding: "60px";
+  padding: 60px;
 }
 
 .mt-65 {
-  margin-top: "65px";
+  margin-top: 65px;
 }
 
 .mb-65 {
-  margin-bottom: "65px";
+  margin-bottom: 65px;
 }
 
 .ml-65 {
-  margin-left: "65px";
+  margin-left: 65px;
 }
 
 .mr-65 {
-  margin-right: "65px";
+  margin-right: 65px;
 }
 
 .mx-65 {
-  margin-left: "65px";
-  margin-right: "65px";
+  margin-left: 65px;
+  margin-right: 65px;
 }
 
 .my-65 {
-  margin-top: "65px";
-  margin-bottom: "65px";
+  margin-top: 65px;
+  margin-bottom: 65px;
 }
 
 .m-65 {
-  padding: "65px";
+  padding: 65px;
 }
 
 .mt-70 {
-  margin-top: "70px";
+  margin-top: 70px;
 }
 
 .mb-70 {
-  margin-bottom: "70px";
+  margin-bottom: 70px;
 }
 
 .ml-70 {
-  margin-left: "70px";
+  margin-left: 70px;
 }
 
 .mr-70 {
-  margin-right: "70px";
+  margin-right: 70px;
 }
 
 .mx-70 {
-  margin-left: "70px";
-  margin-right: "70px";
+  margin-left: 70px;
+  margin-right: 70px;
 }
 
 .my-70 {
-  margin-top: "70px";
-  margin-bottom: "70px";
+  margin-top: 70px;
+  margin-bottom: 70px;
 }
 
 .m-70 {
-  padding: "70px";
+  padding: 70px;
 }
 
 .mt-75 {
-  margin-top: "75px";
+  margin-top: 75px;
 }
 
 .mb-75 {
-  margin-bottom: "75px";
+  margin-bottom: 75px;
 }
 
 .ml-75 {
-  margin-left: "75px";
+  margin-left: 75px;
 }
 
 .mr-75 {
-  margin-right: "75px";
+  margin-right: 75px;
 }
 
 .mx-75 {
-  margin-left: "75px";
-  margin-right: "75px";
+  margin-left: 75px;
+  margin-right: 75px;
 }
 
 .my-75 {
-  margin-top: "75px";
-  margin-bottom: "75px";
+  margin-top: 75px;
+  margin-bottom: 75px;
 }
 
 .m-75 {
-  padding: "75px";
+  padding: 75px;
 }
 
 .mt-80 {
-  margin-top: "80px";
+  margin-top: 80px;
 }
 
 .mb-80 {
-  margin-bottom: "80px";
+  margin-bottom: 80px;
 }
 
 .ml-80 {
-  margin-left: "80px";
+  margin-left: 80px;
 }
 
 .mr-80 {
-  margin-right: "80px";
+  margin-right: 80px;
 }
 
 .mx-80 {
-  margin-left: "80px";
-  margin-right: "80px";
+  margin-left: 80px;
+  margin-right: 80px;
 }
 
 .my-80 {
-  margin-top: "80px";
-  margin-bottom: "80px";
+  margin-top: 80px;
+  margin-bottom: 80px;
 }
 
 .m-80 {
-  padding: "80px";
+  padding: 80px;
 }
 
 .mt-85 {
-  margin-top: "85px";
+  margin-top: 85px;
 }
 
 .mb-85 {
-  margin-bottom: "85px";
+  margin-bottom: 85px;
 }
 
 .ml-85 {
-  margin-left: "85px";
+  margin-left: 85px;
 }
 
 .mr-85 {
-  margin-right: "85px";
+  margin-right: 85px;
 }
 
 .mx-85 {
-  margin-left: "85px";
-  margin-right: "85px";
+  margin-left: 85px;
+  margin-right: 85px;
 }
 
 .my-85 {
-  margin-top: "85px";
-  margin-bottom: "85px";
+  margin-top: 85px;
+  margin-bottom: 85px;
 }
 
 .m-85 {
-  padding: "85px";
+  padding: 85px;
 }
 
 .mt-90 {
-  margin-top: "90px";
+  margin-top: 90px;
 }
 
 .mb-90 {
-  margin-bottom: "90px";
+  margin-bottom: 90px;
 }
 
 .ml-90 {
-  margin-left: "90px";
+  margin-left: 90px;
 }
 
 .mr-90 {
-  margin-right: "90px";
+  margin-right: 90px;
 }
 
 .mx-90 {
-  margin-left: "90px";
-  margin-right: "90px";
+  margin-left: 90px;
+  margin-right: 90px;
 }
 
 .my-90 {
-  margin-top: "90px";
-  margin-bottom: "90px";
+  margin-top: 90px;
+  margin-bottom: 90px;
 }
 
 .m-90 {
-  padding: "90px";
+  padding: 90px;
 }
 
 .mt-95 {
-  margin-top: "95px";
+  margin-top: 95px;
 }
 
 .mb-95 {
-  margin-bottom: "95px";
+  margin-bottom: 95px;
 }
 
 .ml-95 {
-  margin-left: "95px";
+  margin-left: 95px;
 }
 
 .mr-95 {
-  margin-right: "95px";
+  margin-right: 95px;
 }
 
 .mx-95 {
-  margin-left: "95px";
-  margin-right: "95px";
+  margin-left: 95px;
+  margin-right: 95px;
 }
 
 .my-95 {
-  margin-top: "95px";
-  margin-bottom: "95px";
+  margin-top: 95px;
+  margin-bottom: 95px;
 }
 
 .m-95 {
-  padding: "95px";
+  padding: 95px;
 }
 
 .mt-100 {
-  margin-top: "100px";
+  margin-top: 100px;
 }
 
 .mb-100 {
-  margin-bottom: "100px";
+  margin-bottom: 100px;
 }
 
 .ml-100 {
-  margin-left: "100px";
+  margin-left: 100px;
 }
 
 .mr-100 {
-  margin-right: "100px";
+  margin-right: 100px;
 }
 
 .mx-100 {
-  margin-left: "100px";
-  margin-right: "100px";
+  margin-left: 100px;
+  margin-right: 100px;
 }
 
 .my-100 {
-  margin-top: "100px";
-  margin-bottom: "100px";
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
 
 .m-100 {
-  padding: "100px";
+  padding: 100px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0;
+  margin-right: 1.5rem;
+  margin-left: 1.5rem;
 }
 
 .col-1 {
@@ -2692,7 +2700,8 @@ form-wrapper {
   padding: 2rem;
   color: #212529;
 }
-form > label {
+
+label {
   color: #6c757d;
   cursor: pointer;
   display: block;
@@ -2703,10 +2712,19 @@ form > label {
   width: 100%;
   max-width: 500px;
 }
-form > label.required {
+label.required {
   color: #f02310;
 }
-form > input {
+
+.check-label {
+  color: #6c757d;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  gap: 0.5rem;
+}
+
+input {
   -webkit-border-radius: 0.375rem;
   -moz-border-radius: 0.375rem;
   border-radius: 0.375rem;
@@ -2729,7 +2747,7 @@ form > input {
   width: 100%;
   max-width: 500px;
 }
-form > input[type=file i] {
+input[type=file i] {
   appearance: none;
   background-color: initial;
   cursor: default;
@@ -2744,7 +2762,7 @@ form > input[type=file i] {
   border-style: solid;
   border-color: #adb5bd;
 }
-form > input[type=file i]::file-selector-button {
+input[type=file i]::-webkit-file-upload-button, input[type=file i]::file-selector-button {
   background-color: #e9ecef;
   color: #212529;
   padding: 0.3rem 1.2rem;
@@ -2754,59 +2772,46 @@ form > input[type=file i]::file-selector-button {
   margin-right: 10px;
   transition: background-color 0.2s ease-in-out;
 }
-form > input[type=file i]::file-selector-button:hover {
-  background-color: #343a40;
+input[type=file i]::-webkit-file-upload-button:hover, input[type=file i]::file-selector-button:hover {
+  color: rgb(229.5, 229.5, 229.5);
+  background-color: rgb(1.1267605634, 16.338028169, 18.8732394366);
 }
-form > input[type=checkbox], form > input[type=radio] {
+input[type=checkbox], input[type=radio] {
   margin-right: 0.5rem;
   accent-color: #212529;
+  width: 20px;
+  height: 20px;
+  max-width: 20px;
+  padding: 0;
+  display: inline-block;
+  margin: 0;
+  cursor: pointer;
 }
-form > input::placeholder {
+input[type=checkbox]:checked, input[type=radio]:checked {
+  background-color: #043a43;
+  border-color: #043a43;
+}
+input[type=checkbox]:checked[type=checkbox], input[type=radio]:checked[type=checkbox] {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e");
+}
+input[type=checkbox]:checked[type=radio], input[type=radio]:checked[type=radio] {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23fff'/%3e%3c/svg%3e");
+}
+input[type=radio] {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+input::placeholder {
   color: #adb5bd;
   transition: color 0.15s ease-in-out;
 }
-form > input:focus {
+input:focus {
   border-color: #212529;
   outline: none;
 }
-form > select {
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  appearance: none;
-  -webkit-border-radius: 0.375rem;
-  -moz-border-radius: 0.375rem;
-  border-radius: 0.375rem;
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  appearance: none;
-  background-color: #fff;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 10 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23333'/%3E%3C/svg%3E");
-  background-position: right 0.75rem center;
-  background-repeat: no-repeat;
-  background-size: 10px 6px;
-  border-width: 1px;
-  border-width: 1px;
-  border-color: #adb5bd;
-  color: #212529;
-  font-family: Arial, sans-serif;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  margin: 0 0 1rem 0;
-  padding: 0.375rem 0.75rem;
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  width: 100%;
-  max-width: 500px;
-}
-form > select::placeholder {
-  color: #adb5bd;
-  transition: color 0.15s ease-in-out;
-}
-form > select:focus {
-  border-color: #212529;
-  outline: none;
-}
-form > textarea {
+
+textarea {
   -webkit-border-radius: 0.375rem;
   -moz-border-radius: 0.375rem;
   border-radius: 0.375rem;
@@ -2830,52 +2835,12 @@ form > textarea {
   width: 100%;
   max-width: 100%;
 }
-form > textarea::placeholder {
+textarea::placeholder {
   color: #adb5bd;
   transition: color 0.15s ease-in-out;
 }
-form input[type=file]::file-selector-button:hover {
-  background-color: #343a40;
-}
-form::-webkit-file-upload-button {
-  padding: 0.375rem 0.75rem;
-  margin: -0.375rem -0.75rem;
-  -webkit-margin-end: 0.75rem;
-  margin-inline-end: 0.75rem;
-  color: #212529;
-  background-color: #343a40;
-  pointer-events: none;
-  border-color: inherit;
-  border-style: solid;
-  border-width: 0;
-  border-inline-end-width: 1px;
-  border-radius: 0;
-  -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
-form::file-selector-button {
-  padding: 0.375rem 0.75rem;
-  margin: -0.375rem -0.75rem;
-  -webkit-margin-end: 0.75rem;
-  margin-inline-end: 0.75rem;
-  color: #212529;
-  background-color: #343a40;
-  pointer-events: none;
-  border-color: inherit;
-  border-style: solid;
-  border-width: 0;
-  border-inline-end-width: 1px;
-  border-radius: 0;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
-form > .check-label {
-  color: #6c757d;
-  display: flex;
-  align-items: center;
-  font-size: 1rem;
-  gap: 0.5rem;
-}
-form > button {
+
+button {
   -webkit-border-radius: 0.375rem;
   -moz-border-radius: 0.375rem;
   border-radius: 0.375rem;
@@ -2892,21 +2857,30 @@ form > button {
   background-color: #fff;
   line-height: 20px;
 }
-form > button:hover {
+button:hover {
   background-color: rgb(10.2567567568, 11.5, 12.7432432432);
 }
-form > button[type=submit], form > input[type=submit] {
+
+button[type=submit],
+input[type=submit] {
   background-color: #043a43;
   color: #fff;
-  padding: 0.5rem 1.5rem;
   border: none;
   cursor: pointer;
-  font-size: 1rem;
   margin-top: 1rem;
   transition: background-color 0.2s ease-in-out;
 }
-form > button[type=submit]:hover, form > input[type=submit]:hover {
+button[type=submit]:hover,
+input[type=submit]:hover {
+  color: rgb(229.5, 229.5, 229.5);
   background-color: rgb(1.1267605634, 16.338028169, 18.8732394366);
+}
+
+[type=button],
+[type=reset],
+[type=submit],
+button {
+  -webkit-appearance: button;
 }
 
 ::-webkit-file-upload-button {
@@ -2917,6 +2891,12 @@ form > button[type=submit]:hover, form > input[type=submit]:hover {
 ::file-selector-button {
   font: inherit;
   -webkit-appearance: button;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
 }
 
 nav {
@@ -3117,6 +3097,7 @@ header.header-main .search-form input {
   border: 1px solid #ccc;
   border-radius: 4px;
   width: 100%;
+  margin: 0;
   margin-left: 20px;
 }
 header.header-main .search-form input:focus-visible {
@@ -3127,10 +3108,11 @@ header.header-main .search-form button {
   background: #043a43;
   color: #fff;
   border: none;
-  padding: 0.5rem 0.75rem;
+  padding: 13px 20px;
   border-radius: 4px;
   cursor: pointer;
   font-size: 1rem;
+  margin: 0;
 }
 header.header-main .search-form button i {
   pointer-events: none;
@@ -3327,12 +3309,11 @@ header.header-main .dropdown > a {
   }
 }
 .footer {
-  background-color: #161616;
   padding: 60px;
   height: auto;
   /*-- footer --*/
+  /*-- store-details --*/
   /*-- footer copyright--*/
-  /*- footer logo --*/
 }
 .footer .footer-content {
   display: flex;
@@ -3341,18 +3322,24 @@ header.header-main .dropdown > a {
   width: 100%;
   gap: 50px;
 }
-.footer .logo {
-  height: 37px;
+.footer .store-details {
+  flex: 1 1 300px;
+}
+.footer .store-details p {
+  margin: 0 0 10px 0;
+}
+.footer .store-details a {
+  color: white;
 }
 .footer a {
   text-decoration: none;
 }
-.footer .nav-title {
-  font-size: 20px;
+.footer .title {
+  font-size: 1rem;
   font-weight: bold;
-  padding: 10px;
   display: block;
   margin-bottom: 10px;
+  padding: 7px 0;
   border-bottom: 1px solid #495057;
 }
 .footer .nav {
@@ -3364,16 +3351,16 @@ header.header-main .dropdown > a {
   margin: 0;
 }
 .footer .nav ul li {
-  margin-bottom: 0.5rem;
+  margin: 0 0 10px 0;
 }
 .footer .social-links {
   flex: 1 1 100%;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
 }
 .footer .social-links ul {
   display: flex;
+  flex-wrap: wrap;
 }
 .footer .social-links a {
   margin-right: 1rem;
@@ -3395,7 +3382,7 @@ header.header-main .dropdown > a {
     align-items: center;
     gap: 20px;
   }
-  .footer .footer-content .nav-title {
+  .footer .footer-content .title {
     font-size: 20px;
     font-weight: bold;
     padding: 10px;
@@ -3407,7 +3394,7 @@ header.header-main .dropdown > a {
     flex: 1 1 100px;
     text-align: center;
   }
-  .footer .footer-content .footer .social-links ul {
+  .footer .footer-content .social-links ul {
     display: flex;
   }
 }

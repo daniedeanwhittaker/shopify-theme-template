@@ -13,7 +13,7 @@ $color-paragraph: variables.$color-grey-900;
 $color-link: variables.$color-yellow;
 
 //Horizontal Rule variables
-$hr-color: #ddd;
+$hr: 1px solid variables.$color-grey-700;
 
 //Global font-family
 body {
@@ -130,7 +130,7 @@ a {
 hr {
   margin: 1rem 0;
   border: 0;
-  border-top: 1px solid $hr-color;
+  border-top: $hr;
 }
 
 //Quotation

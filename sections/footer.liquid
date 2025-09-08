@@ -1,97 +1,257 @@
 <!-- Footer -->
 <footer class="footer">
   <div class="container">
-    <!-- logo -->
-
-    <!-- IF -->
-    {% if section.settings.show_footer_logo %}
-      <a href="{{ routes.root_url }}" class="logo" title="{{ shop.name }}">
-        {% if shop.brand.logo %}
-          <img src="{{ shop.brand.logo | img_url: '200x' }}" alt="{{ shop.name }}">
-        {% else %}
-          <span class="shop-name">
-            {{ shop.name }}
-          </span>
+    <div class="row justify-content-between">
+      <div class="store-details col-6 mx-20 mb-3 col-lg-2">
+        <!-- logo -->
+        {% if section.settings.footer_logo %}
+            {% assign logo_width = section.settings.footer_logo_width %}
+            <a href="{{ routes.root_url }}" class="logo mb-20" title="{{ shop.name }}">
+              <img src="{{ section.settings.footer_logo | image_url: width: logo_width}}" alt="Footer Logo" loading="lazy" class="footer-logo" />
+          </a>
+          <hr>
         {% endif %}
-      </a>
-    {% endif %}
 
-    <nav class="nav">
-      <span class="nav-title">Quick Links</span>
-      <ul>
-        <li>
-          <a href="/terms-and-conditions" title="Terms and Conditions">Terms and Conditions</a>
-        </li>
-        <li>
-          <a href="/privacy" title="Privacy policy">Privacy policy</a>
-        </li>
-        <li>
-          <a href="/site-map" title="Site Map">Site Map</a>
-        </li>
-      </ul>
-    </nav>
+        {% if shop.email %}
+          <p class="contact-email">
+            <a href="mailto:{{ shop.email }}" title="{{ shop.email }}">
+              <i class="fa-solid fa-envelope"></i> {{ shop.email }}
+            </a>
+          </p>
+        {% endif %}
 
-    <nav class="nav social-links">
-      <span class="nav-title">Follow me on social</span>
-      <ul>
-        <!-- social links -->
-        <li>
-          <a href="https://www.facebook.com/ctrlbuild">
-            <i class="fa-brands fa-facebook"></i>
-          </a>
-        </li>
-        <li>
-          <a href="https://www.twitter.com/ctrlbuild">
-            <i class="fa-brands fa-twitter"></i>
-          </a>
-        </li>
-        <li>
-          <a href="https://www.linkedin.com/company/ctrlbuild">
-            <i class="fa-brands fa-linkedin"></i>
-          </a>
-        </li>
-      </ul>
-    </nav>
+        {% if shop.phone %}
+          <p class="contact-email">
+            <a href="mailto:{{ shop.phone }}" title="{{ shop.phone }}">
+              <i class="fa-solid fa-phone"></i> {{ shop.phone }}
+            </a>
+          </p>
+        {% endif %}
+      </div>
 
-    <div class="footer-wrapper">
-      <h2 class="footer-form-heading">Subscribe to our newsletter</h2>
-      {% form 'contact' %}
-        <input type="hidden" name="form_type" value="customer">
-        <input type="hidden" name="utf8" value="">
-        <label for="footer-email" class="footer-form-label">Email address</label>
-        <input type="email" id="footer-email" name="contact[email]" class="footer-form-input" required>
+      <div class="col-6 col-lg-2 mx-20 mb-3">
+        <nav class="nav">
+          <span class="title">Quick Links</span>
+          <ul>
+            <li>
+              <a href="/terms-and-conditions" title="Terms and Conditions">
+                Terms and Conditions
+              </a>
+            </li>
+            <li>
+              <a href="/privacy" title="Privacy policy">
+                Privacy policy
+              </a>
+            </li>
+            <li>
+              <a href="/site-map" title="Site Map">
+                Site Map
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
 
-        <button type="submit" class="footer-form-button">Subscribe</button>
-      {% endform %}
+      <div class="col-6 col-lg-2 mx-20 mb-3">
+        <nav class="nav social-links">
+          <span class="title">Follow me on social</span>
+          <ul>
+            <!-- social links -->
+            {% if section.settings.footer_facebook_link %}
+            <li>
+              <a href="{{ section.settings.footer_facebook_link }}" title="Social Facebook page" target="_blank" rel="noopener">
+                <i class="fa-brands fa-facebook"></i>
+              </a> 
+            </li>
+            {% endif %}
+            {% if section.settings.footer_x_link %}
+            <li>
+              <a href="{{ section.settings.footer_x_link }}" title="Social X page" target="_blank" rel="noopener">
+                <i class="fa-brands fa-x-twitter"></i>
+              </a> 
+            </li>
+            {% endif %}
+            {% if section.settings.footer_instagram_link %}
+            <li>
+              <a href="{{ section.settings.footer_instagram_link }}" title="Social Instagram page" target="_blank" rel="noopener">
+                <i class="fa-brands fa-instagram"></i>
+              </a> 
+            </li>
+            {% endif %}
+            {% if section.settings.footer_linkedin_link %}
+            <li>
+              <a href="{{ section.settings.footer_linkedin_link }}" title="Social Linkedin page" target="_blank" rel="noopener">
+                <i class="fa-brands fa-linkedin"></i>
+              </a> 
+            </li>
+            {% endif %}
+            {% if section.settings.footer_youtube_link %}
+            <li>
+              <a href="{{ section.settings.footer_youtube_link }}" title="Social YouTube page" target="_blank" rel="noopener">
+                  <i class="fa-brands fa-youtube"></i>
+              </a> 
+            </li>
+            {% endif %}
+            {% if section.settings.footer_pinterest_link %}
+            <li>
+              <a href="{{ section.settings.footer_pinterest_link }}" title="Social Pinterest page" target="_blank" rel="noopener">
+                  <i class="fa-brands fa-pinterest"></i>
+              </a> 
+            </li>
+            {% endif %}
+            {% if section.settings.footer_tiktok_link %}
+            <li>
+              <a href="{{ section.settings.footer_tiktok_link }}" title="Social Tikt page" target="_blank" rel="noopener">
+                <i class="fa-brands fa-tiktok"></i>
+              </a> 
+            </li>
+            {% endif %}
+          </ul>
+        </nav>
+      </div>
+
+      <div class="col-6 mx-20 mb-3 col-lg-3">
+        <div class="newsletter">
+          <h2 class="title">Subscribe to our newsletter</h2>
+          {% form 'contact' %}
+            <input type="hidden" name="form_type" value="customer">
+            <input type="hidden" name="utf8" value="">
+
+            <div class="form-group">
+              <input type="email" placeholder="Email" name="contact[email]" required>
+            </div>
+
+            <div class="form-group content-justify-start">
+              <button type="submit" class="btn btn-light">Subscribe</button>
+            </div>
+
+          {% endform %}
+        </div>
+      </div>
     </div>
 
-    <style>
-      .footer-wrapper {
-        padding: 2rem;
-        background-color: #f8f8f8;
-        text-align: center;
-        border-top: 1px solid #ddd;
-      }
-
-      .footer-heading {
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
-        color: #333;
-      }
-    </style>
   </div>
 </footer>
+
+
+{% style %}
+.footer {
+  background-color: {{ section.settings.footer_bg_color }};
+}
+footer .title {
+  font-size: {{ section.settings.footer_title_font-size }}px ;
+  color: {{ section.settings.footer_title_color }};
+} 
+footer .nav a {
+  color: {{ section.settings.footer_navigation_link_color }};
+  font-size: {{ section.settings.footer_navigation_font-size }}px ;
+}
+{% endstyle %}
 
 {% schema %}
 {
   "name": "Footer",
   "settings": [
     {
-      "type": "checkbox",
-      "id": "show_footer_logo",
-      "label": "Show Logo",
-      "default": true,
-      "info": "Show Logo in Footer."
+      "type": "image_picker",
+      "id": "footer_logo",
+      "label": "Footer Logo",
+      "info": "Upload a logo for the footer section",
+    },
+    {
+      "type": "number",
+      "id": "footer_logo_width",
+      "label": {
+        "en": "Footer Logo Width",
+        "fr": "Largeur du logo de pied de page",
+        "de": "Fußzeilen-Logo-Breite",
+      },
+      "default": 100
+    },
+    {
+      "type": "color",
+      "id": "footer_bg_color",
+      "default": "#043a43",
+      "label": "Background Colour",
+      "info": "main background colour for footer."
+    },
+    {
+      "type": "color",
+      "id": "footer_title_color",
+      "default": "#ffffff",
+      "label": "Navigtion Title Colour",
+      "info": "The navigation title that sitas above the links in the footer."
+    },
+    {
+      "type": "range",
+      "id": "footer_title_font-size",
+      "label": "Navigtion Title Font Size",
+      "min": 14,
+      "max": 28,
+      "step": 1,
+      "default": 18,
+      "unit": "px",
+      "info": "Adjust the size of the navigation title."
+    },
+    {
+      "type": "color",
+      "id": "footer_navigation_link_color",
+      "default": "#ffffff",
+      "label": "Navigation Link Colour",
+      "info": "The colour of the links in the footer navigation."
+    },
+    {
+      "type": "range",
+      "id": "footer_navigation_font-size",
+      "label": "Navigtion link font size",
+      "min": 12,
+      "max": 28,
+      "step": 1,
+      "default": 16,
+      "unit": "px",
+      "info": "Adjust the size of the navigation links."
+    },
+    {
+      "type": "text",
+      "id": "footer_facebook_link",
+      "label": "Facebook Link",
+      "info": "Add your facebook link to your store page (www.facebook.com/yourpage)"
+    },
+    {
+      "type": "text",
+      "id": "footer_x_link",
+      "label": "X Link",
+      "info": "Add your x link to your store page (www.x.com/yourpage)"
+    },
+    {
+      "type": "text",
+      "id": "footer_instagram_link",
+      "label": "Instagram Link",
+      "info": "Add your instagram link to your store page (www.instagram.com/yourpage)"
+    },
+    {
+      "type": "text",
+      "id": "footer_linkedin_link",
+      "label": "LinkedIn Link",
+      "info": "Add your linkedin link to your store page (www.linkedin.com/yourpage)"
+    },
+    {
+      "type": "text",
+      "id": "footer_youtube_link",
+      "label": "YouTube Link",
+      "info": "Add your youtube link to your store page (www.youtube.com/yourpage)"
+    },
+    {
+      "type": "text",
+      "id": "footer_pinterest_link",
+      "label": "Pinterest Link",
+      "info": "Add your pinterest link to your store page (www.pinterest.com/yourpage)"
+    },
+    {
+      "type": "text",
+      "id": "footer_tiktok_link",
+      "label": "TikTok Link",
+      "info": "Add your tiktok link to your store page (www.tiktok.com/yourpage)"
     }
   ],
   "presets": [
