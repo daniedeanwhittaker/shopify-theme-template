@@ -45,10 +45,11 @@ h1,
 h1,
 .h1 {
   font-size: calc(1.375rem + 1.5vw);
+  margin-bottom: 2rem;
+  color: $h1-color;
 }
 
 @media (min-width: 1200px) {
-
   h1,
   .h1 {
     font-size: 2.5rem;
@@ -58,11 +59,11 @@ h1,
 h2,
 .h2 {
   font-size: calc(1.325rem + 0.9vw);
+  margin-bottom: 1.8rem;
   color: $h2-color;
 }
 
 @media (min-width: 1200px) {
-
   h2,
   .h2 {
     font-size: 2rem;

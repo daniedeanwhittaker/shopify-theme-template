@@ -1,0 +1,38 @@
+<div class="main-mega-menu">
+    <div class="container">
+       <nav class="mega-menu">
+            <ul class="menu-level-1">
+                {% for link in linklists.collection-menu.links %}
+                    <li class="menu-item {% if link.links.size > 0 %}has-submenu{% endif %}">
+                        
+                        <a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a>
+
+                        {% if link.links.size > 0 %}
+                            <div class="mega-dropdown">
+                                <div class="container">
+                                    <ul class="menu-level-2">
+                                        {% for sublink in link.links %}
+                                            <li>
+                                                <a href="{{ sublink.url }}">
+                                                    {{ sublink.title }}
+                                                </a>
+
+                                                {% if sublink.links.size > 0 %}
+                                                    <ul class="menu-level-3">
+                                                        {% for sublink2 in sublink.links %}
+                                                            <li><a href="{{ sublink2.url }}">{{ sublink2.title }}</a></li>
+                                                        {% endfor %}
+                                                    </ul>
+                                                {% endif %}
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        </nav>
+    </div>   
+</div>

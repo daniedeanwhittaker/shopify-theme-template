@@ -2,150 +2,202 @@
 <footer class="footer">
   <div class="container">
     <div class="row justify-content-between">
-      <div class="store-details col-6 mx-20 mb-3 col-lg-2">
-        <!-- logo -->
-        {% if section.settings.footer_logo %}
-            {% assign logo_width = section.settings.footer_logo_width %}
-            <a href="{{ routes.root_url }}" class="logo mb-20" title="{{ shop.name }}">
-              <img src="{{ section.settings.footer_logo | image_url: width: logo_width}}" alt="Footer Logo" loading="lazy" class="footer-logo" />
-          </a>
-          <hr>
-        {% endif %}
+      <!-- ################################## FOR #################### -->
+      {% for block in section.blocks %}
+        {% case block.type %}
+          <!-- ##a########################### DETAILS ################ -->
+          {% when 'contact-details' %}
+            <div class="store-details col-6 mx-20 mb-3 col-lg-2">
+              <!-- logo -->
+              {% if section.settings.footer_logo %}
+                {% assign logo_width = section.settings.footer_logo_width %}
+                <a href="{{ routes.root_url }}" class="logo mb-20" title="{{ shop.name }}">
+                  <img
+                    src="{{ section.settings.footer_logo | image_url: width: logo_width}}"
+                    alt="Footer Logo"
+                    loading="lazy"
+                    class="footer-logo"
+                  >
+                </a>
+                <hr>
+              {% endif %}
 
-        {% if shop.email %}
-          <p class="contact-email">
-            <a href="mailto:{{ shop.email }}" title="{{ shop.email }}">
-              <i class="fa-solid fa-envelope"></i> {{ shop.email }}
-            </a>
-          </p>
-        {% endif %}
+              {% if shop.email %}
+                <p class="contact-email">
+                  <a href="mailto:{{ shop.email }}" title="{{ shop.email }}">
+                    <i class="fa-solid fa-envelope"></i> {{ shop.email }}
+                  </a>
+                </p>
+              {% endif %}
 
-        {% if shop.phone %}
-          <p class="contact-email">
-            <a href="mailto:{{ shop.phone }}" title="{{ shop.phone }}">
-              <i class="fa-solid fa-phone"></i> {{ shop.phone }}
-            </a>
-          </p>
-        {% endif %}
-      </div>
-
-      <div class="col-6 col-lg-2 mx-20 mb-3">
-        <nav class="nav">
-          <span class="title">Quick Links</span>
-          <ul>
-            <li>
-              <a href="/terms-and-conditions" title="Terms and Conditions">
-                Terms and Conditions
-              </a>
-            </li>
-            <li>
-              <a href="/privacy" title="Privacy policy">
-                Privacy policy
-              </a>
-            </li>
-            <li>
-              <a href="/site-map" title="Site Map">
-                Site Map
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-
-      <div class="col-6 col-lg-2 mx-20 mb-3">
-        <nav class="nav social-links">
-          <span class="title">Follow me on social</span>
-          <ul>
-            <!-- social links -->
-            {% if section.settings.footer_facebook_link %}
-            <li>
-              <a href="{{ section.settings.footer_facebook_link }}" title="Social Facebook page" target="_blank" rel="noopener">
-                <i class="fa-brands fa-facebook"></i>
-              </a> 
-            </li>
-            {% endif %}
-            {% if section.settings.footer_x_link %}
-            <li>
-              <a href="{{ section.settings.footer_x_link }}" title="Social X page" target="_blank" rel="noopener">
-                <i class="fa-brands fa-x-twitter"></i>
-              </a> 
-            </li>
-            {% endif %}
-            {% if section.settings.footer_instagram_link %}
-            <li>
-              <a href="{{ section.settings.footer_instagram_link }}" title="Social Instagram page" target="_blank" rel="noopener">
-                <i class="fa-brands fa-instagram"></i>
-              </a> 
-            </li>
-            {% endif %}
-            {% if section.settings.footer_linkedin_link %}
-            <li>
-              <a href="{{ section.settings.footer_linkedin_link }}" title="Social Linkedin page" target="_blank" rel="noopener">
-                <i class="fa-brands fa-linkedin"></i>
-              </a> 
-            </li>
-            {% endif %}
-            {% if section.settings.footer_youtube_link %}
-            <li>
-              <a href="{{ section.settings.footer_youtube_link }}" title="Social YouTube page" target="_blank" rel="noopener">
-                  <i class="fa-brands fa-youtube"></i>
-              </a> 
-            </li>
-            {% endif %}
-            {% if section.settings.footer_pinterest_link %}
-            <li>
-              <a href="{{ section.settings.footer_pinterest_link }}" title="Social Pinterest page" target="_blank" rel="noopener">
-                  <i class="fa-brands fa-pinterest"></i>
-              </a> 
-            </li>
-            {% endif %}
-            {% if section.settings.footer_tiktok_link %}
-            <li>
-              <a href="{{ section.settings.footer_tiktok_link }}" title="Social Tikt page" target="_blank" rel="noopener">
-                <i class="fa-brands fa-tiktok"></i>
-              </a> 
-            </li>
-            {% endif %}
-          </ul>
-        </nav>
-      </div>
-
-      <div class="col-6 mx-20 mb-3 col-lg-3">
-        <div class="newsletter">
-          <h2 class="title">Subscribe to our newsletter</h2>
-          {% form 'contact' %}
-            <input type="hidden" name="form_type" value="customer">
-            <input type="hidden" name="utf8" value="">
-
-            <div class="form-group">
-              <input type="email" placeholder="Email" name="contact[email]" required>
+              {% if shop.phone %}
+                <p class="contact-email">
+                  <a href="mailto:{{ shop.phone }}" title="{{ shop.phone }}">
+                    <i class="fa-solid fa-phone"></i> {{ shop.phone }}
+                  </a>
+                </p>
+              {% endif %}
             </div>
 
-            <div class="form-group content-justify-start">
-              <button type="submit" class="btn btn-light">Subscribe</button>
+          <!-- ############################## MENU ################### -->
+          {% when 'menu' %}
+            <div class="col-6 col-lg-2 mx-20 mb-3">
+              <nav class="nav">
+                <span class="title">Quick Links</span>
+                <ul>
+                  <li>
+                    <a href="/terms-and-conditions" title="Terms and Conditions"> Terms and Conditions </a>
+                  </li>
+                  <li>
+                    <a href="/privacy" title="Privacy policy"> Privacy policy </a>
+                  </li>
+                  <li>
+                    <a href="/site-map" title="Site Map"> Site Map </a>
+                  </li>
+                </ul>
+              </nav>
             </div>
 
-          {% endform %}
-        </div>
-      </div>
+          <!-- ############################## NEWSLETTER ############# -->
+          {% when 'newsletter' %}
+
+            <div class="col-6 mx-20 mb-3 col-lg-3">
+              <div class="newsletter">
+                <h2 class="title">Subscribe to our newsletter</h2>
+                {% form 'contact' %}
+                  <input type="hidden" name="form_type" value="customer">
+                  <input type="hidden" name="utf8" value="">
+
+                  <div class="form-group">
+                    <input type="email" placeholder="Email" name="contact[email]" required>
+                  </div>
+
+                  <div class="form-group content-justify-start">
+                    <button type="submit" class="btn btn-light">Subscribe</button>
+                  </div>
+                {% endform %}
+              </div>
+            </div>
+          <!-- ############################## SOCIAL ################# -->
+                {% when 'social' %}
+            <div class="col-6 col-lg-2 mx-20 mb-3">
+              <nav class="nav social-links">
+                <span class="title">Follow me on social</span>
+                <ul>
+                  <!-- social links -->
+                  {% if section.settings.footer_facebook_link %}
+                    <li>
+                      <a
+                        href="{{ section.settings.footer_facebook_link }}"
+                        title="Social Facebook page"
+                        target="_blank"
+                        rel="noopener"
+                      >
+                        <i class="fa-brands fa-facebook"></i>
+                      </a>
+                    </li>
+                  {% endif %}
+                  {% if section.settings.footer_x_link %}
+                    <li>
+                      <a
+                        href="{{ section.settings.footer_x_link }}"
+                        title="Social X page"
+                        target="_blank"
+                        rel="noopener"
+                      >
+                        <i class="fa-brands fa-x-twitter"></i>
+                      </a>
+                    </li>
+                  {% endif %}
+                  {% if section.settings.footer_instagram_link %}
+                    <li>
+                      <a
+                        href="{{ section.settings.footer_instagram_link }}"
+                        title="Social Instagram page"
+                        target="_blank"
+                        rel="noopener"
+                      >
+                        <i class="fa-brands fa-instagram"></i>
+                      </a>
+                    </li>
+                  {% endif %}
+                  {% if section.settings.footer_linkedin_link %}
+                    <li>
+                      <a
+                        href="{{ section.settings.footer_linkedin_link }}"
+                        title="Social Linkedin page"
+                        target="_blank"
+                        rel="noopener"
+                      >
+                        <i class="fa-brands fa-linkedin"></i>
+                      </a>
+                    </li>
+                  {% endif %}
+                  {% if section.settings.footer_youtube_link %}
+                    <li>
+                      <a
+                        href="{{ section.settings.footer_youtube_link }}"
+                        title="Social YouTube page"
+                        target="_blank"
+                        rel="noopener"
+                      >
+                        <i class="fa-brands fa-youtube"></i>
+                      </a>
+                    </li>
+                  {% endif %}
+                  {% if section.settings.footer_pinterest_link %}
+                    <li>
+                      <a
+                        href="{{ section.settings.footer_pinterest_link }}"
+                        title="Social Pinterest page"
+                        target="_blank"
+                        rel="noopener"
+                      >
+                        <i class="fa-brands fa-pinterest"></i>
+                      </a>
+                    </li>
+                  {% endif %}
+                  {% if section.settings.footer_tiktok_link %}
+                    <li>
+                      <a
+                        href="{{ section.settings.footer_tiktok_link }}"
+                        title="Social Tikt page"
+                        target="_blank"
+                        rel="noopener"
+                      >
+                        <i class="fa-brands fa-tiktok"></i>
+                      </a>
+                    </li>
+                  {% endif %}
+                </ul>
+              </nav>
+            </div>
+
+      
+      
+   
+
+      
+      
+          {% endcase %}
+      {% endfor %}
+      <!-- ################################## ENDFOR ################# -->
     </div>
-
   </div>
 </footer>
 
-
 {% style %}
-.footer {
-  background-color: {{ section.settings.footer_bg_color }};
-}
-footer .title {
-  font-size: {{ section.settings.footer_title_font-size }}px ;
-  color: {{ section.settings.footer_title_color }};
-} 
-footer .nav a {
-  color: {{ section.settings.footer_navigation_link_color }};
-  font-size: {{ section.settings.footer_navigation_font-size }}px ;
-}
+  .footer {
+    background-color: {{ section.settings.footer_bg_color }};
+  }
+  footer .title {
+    font-size: {{ section.settings.footer_title_font-size }}px ;
+    color: {{ section.settings.footer_title_color }};
+  }
+  footer .nav a {
+    color: {{ section.settings.footer_navigation_link_color }};
+    font-size: {{ section.settings.footer_navigation_font-size }}px ;
+  }
 {% endstyle %}
 
 {% schema %}
@@ -253,6 +305,18 @@ footer .nav a {
       "label": "TikTok Link",
       "info": "Add your tiktok link to your store page (www.tiktok.com/yourpage)"
     }
+  ],
+  "blocks": [{
+     "type": "menu",
+     "name": "Menu",
+     "settings": [
+       {
+         "type": "link_list",
+         "id": "menu",
+         "label": "Select Menu",
+         "info": "Select the menu to display in this section."
+       }
+     ]
   ],
   "presets": [
     {

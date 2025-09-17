@@ -2,8 +2,18 @@
 @use "../mixings" as mixings;
 @use 'sass:color';
 
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    align-items: flex-start;
+}
+
 // Wrapper
 form {
+    margin: 0 0 50px 0;
+    
     &-wrapper {
         display: flex;
         flex-direction: column;
@@ -31,6 +41,7 @@ label {
         color: variables.$label_required_color;
     }
 }
+
 //Checkbox Label
 .check-label {
     color: variables.$label_color;
@@ -39,6 +50,7 @@ label {
     font-size: variables.$label_font-size;
     gap: 0.5rem;
 }
+
 // Inputs, Textareas, Selects
 input {
     @include mixings.radius(variables.$input_border-radius);
@@ -96,10 +108,14 @@ input {
         }
     }
     
+    &[type="date"]{
+        cursor: pointer;
+    }
 
     // Checkbox & Radio
     &[type="checkbox"],
     &[type="radio"] {
+        cursor: pointer;
         margin-right: 0.5rem;
         accent-color: #212529;
         width: 20px;
@@ -108,7 +124,6 @@ input {
         padding: 0;
         display: inline-block;
         margin: 0;
-        cursor: pointer;
 
         &:checked {
             background-color: variables.$color-primary;
@@ -122,19 +137,23 @@ input {
             }
         }
     }
+
     &[type="radio"] {
         @include mixings.radius(50%);
     }
+
     &::placeholder {
         color: variables.$color-grey-500;
         transition: variables.$placeholder_transition;
     }
 
     &:focus {
-        border-color: variables.$input_focus-color;
-        outline: none;
+        border-color: variables.$form_focus-color;
+        outline: 0;
+        box-shadow: 0 0 0 .25rem rgba(13, 110, 253, .25);
     }
 }
+
 
 // Textarea specific
 textarea {
@@ -163,6 +182,12 @@ textarea {
         color: variables.$color-grey-500;
         transition: variables.$placeholder_transition;
     }
+
+    &:focus {
+        border-color: variables.$form_focus-color;
+        outline: 0;
+        box-shadow: 0 0 0 .25rem rgba(13, 110, 253, .25);
+    }
 }
 
 // buttons
@@ -184,23 +209,14 @@ button {
     &:hover {
         background-color: color.adjust(variables.$form_focus_color, $lightness: -10%);
     }
-}
-    //Submit buttons
-    button[type="submit"],
-    input[type="submit"]{
-            background-color: variables.$color-primary;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-            margin-top: 1rem;
-            transition: background-color 0.2s ease-in-out;
-
-            &:hover {
-                color:color.adjust(variables.$primary_button_color, $lightness: -10%);
-                background-color: color.adjust(variables.$primary_button_background-color, $lightness: -10%);
-            }
+    &:focus {
+        border-color: variables.$form_focus-color;
+        outline: 0;
+        box-shadow: 0 0 0 .25rem rgba(13, 110, 253, .25);
     }
+}
 
+//Remove pre applied styling
 [type=button], 
 [type=reset], 
 [type=submit], 
@@ -208,6 +224,76 @@ button {
     -webkit-appearance: button;
 }
 
+
+//Submit buttons
+button,
+button[type="submit"],
+input[type="submit"]{
+    @include mixings.radius(variables.$primary_button_border-radius);
+    color: variables.$primary_button_color;
+    background-color: variables.$primary_button_background-color;
+    border-width: variables.$primary_button_border-width;
+    border-style: variables.$primary_button_border-style;
+    border-color: variables.$primary_button_border-color;
+    cursor: pointer;
+    font-family: variables.$primary_button_font-family;
+    font-weight: variables.$primary_button_font-weight;
+    margin-top: 1rem;
+    transition: border-color 0.2s ease-in-out;
+    margin: variables.$primary_button_margin;
+    line-height: variables.$primary_button_line-height;
+    font-size: 1.25rem;
+    padding: 0.75em 1.5em;
+
+    &:hover {
+        color:color.adjust(variables.$primary_button_color, $lightness: -10%);
+        background-color: color.adjust(variables.$primary_button_background-color, $lightness: -10%);
+    }
+    &:focus {
+        border-color: variables.$form_focus-color;
+        outline: 0;
+        box-shadow: 0 0 0 .25rem rgba(13, 110, 253, .25);
+    }
+}
+
+button[type="submit"],
+input[type="submit"]{
+    width: 100%;
+    max-width: 300px;
+}
+
+// Select specific
+select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: variables.$select_background-color;
+    background-image: variables.$select_background-image;
+    background-repeat: variables.$select_background-repeat;
+    background-position: variables.$select_background-position;
+    background-size: variables.$select_background-size;
+    border-style: variables.$select_border-style;
+    border-color: variables.$select_border-color;
+    border-width: variables.$select_border-width;
+    border-radius: variables.$select_border-radius;
+    color: variables.$select_color;
+    cursor: pointer;
+    font-family: variables.$select_font-family;
+    font-size: variables.$select_font-size;
+    font-weight: variables.$select_font-weight;
+    line-height: variables.$select_line-height;
+    margin: variables.$select_margin;
+    padding: variables.$select_padding;
+    width:variables.$select_width;
+    max-width: variables.$select_max-width;
+
+    &:focus {
+        border-color: variables.$form_focus-color;
+        outline: 0;
+        box-shadow: 0 0 0 .25rem rgba(13, 110, 253, .25);
+    }
+}
+ 
 ::-webkit-file-upload-button {
   font: inherit;
   -webkit-appearance: button;
@@ -218,8 +304,3 @@ button {
   -webkit-appearance: button;
 }
 
-.form-group {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 1rem;
-}

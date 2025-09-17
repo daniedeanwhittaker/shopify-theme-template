@@ -50,6 +50,10 @@
         {
             "folderPath": "shopify/readme.txt/",
             "color": "foldercolorizer.color_990033"
+        },
+        {
+            "folderPath": "shopify/scss/lib/_variables.scss/",
+            "color": "foldercolorizer.color_cc66cc"
         }
     ]
 }

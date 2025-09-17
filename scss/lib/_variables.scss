@@ -4,7 +4,7 @@
 //*************** Colours
 //*******************************
 $color-body: #212529;
-
+            
 $color-primary: #043a43;
 $color-secondary: #005C53;
 
@@ -74,6 +74,24 @@ $container-lg: 960px; // Large devices
 $container-xl: 1140px; // Extra large
 $container-xxl: 1320px; // Extra extra large
 
+
+$breakpoints: (
+  xs: $container-xs,
+  sm: $container-sm,
+  md: $container-md,
+  lg: $container-lg,
+  xl: $container-xl,
+  xxl: $container-xxl
+);
+
+$container-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px
+);
+
 //Flex
 
 //*******************************
@@ -101,7 +119,7 @@ $weight-light: 300;
 //*************** Form
 //*******************************
 
-$form_focus-color: #3498db;
+$form_focus-color: #86b7fe;
 
 //Forms
 $form_border-style: solid;
@@ -178,6 +196,10 @@ $textarea_max-width: 100%;
 //Select
 $select_arrow-color: $form_focus-color;
 $select_background-color: #fff;
+$select_background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+$select_background-repeat: no-repeat;
+$select_background-position: right .75rem center;
+$select_background-size: 16px 12px;
 $select_border-style: $form_border-style;
 $select_border-color: $form_border-color;
 $select_border-width: $form_border-width;
@@ -192,6 +214,7 @@ $select_margin: $textarea_margin;
 $select_padding: $form_padding;
 $select_width:100%;
 $select_max-width: 500px;
+
 
 //*******************************
 //*************** Button
@@ -355,13 +378,3 @@ $breakpoints: (
 );
 
 
-
-//Input
-
-//Layout
-
-//Spacing
-
-//Tables
-
-//Typography

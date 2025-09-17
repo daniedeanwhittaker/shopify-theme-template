@@ -3,7 +3,7 @@
 
 $heading-height: auto;
 
-// header
+//header
 header.header-main {
     height: $heading-height;
     width: 100%;
@@ -53,13 +53,9 @@ header.header-main {
                 line-height: normal;
 
                 &:hover {
-                    background-color: variables.$color-primary;
-                    color: #fff;
+                    text-decoration: underline;
                 }
-
             }
-
-
             ul {
                 background: white;
                 display: none;
@@ -155,11 +151,6 @@ header.header-main {
             width: 100%;
             margin: 0;
             margin-left: 20px;
-
-            &:focus-visible {
-                outline: 2px solid variables.$color-primary;
-                outline-offset: 2px;
-            }
         }
 
         button {
@@ -171,6 +162,7 @@ header.header-main {
             cursor: pointer;
             font-size: 1rem;
             margin: 0;
+            max-width: 60px;
 
             i {
                 pointer-events: none;
